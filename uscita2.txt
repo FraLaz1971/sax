@@ -1,0 +1,930 @@
+tempi[] = ec 19 04 20 ad  1998 01 27 03:51:33:02023
+OBT in decimale =              419700909
+UTC =                          910492974
+tempi[1] = ec 19 40 28 a9  1998 01 27 03:52:33:05140
+OBT in decimale =              423635113
+UTC =                          914427177
+tempi[2] = ec 19 7c 30 a5  1998 01 27 03:53:33:08258
+OBT in decimale =              427569317
+UTC =                          918361380
+tempi[3] = ec 19 b8 24 a5  1998 01 27 03:54:33:03568
+OBT in decimale =              431498405
+UTC =                          922290466
+tempi[4] = ec 19 f4 2c a1  1998 01 27 03:55:33:06685
+OBT in decimale =              435432609
+UTC =                          926224669
+tempi[5] = ec 1a 30 20 a1  1998 01 27 03:56:33:01995
+OBT in decimale =              439361697
+UTC =                          930153755
+tempi[6] = ec 1a 6c 28 9d  1998 01 27 03:57:33:05113
+OBT in decimale =              443295901
+UTC =                          934087959
+tempi[7] = ec 1a a8 30 99  1998 01 27 03:58:33:08231
+OBT in decimale =              447230105
+UTC =                          938022162
+tempi[8] = ec 1a e4 24 99  1998 01 27 03:59:33:03541
+OBT in decimale =              451159193
+UTC =                          941951249
+tempi[9] = ec 31 3c 30 dc  1998 01 27 05:34:53:08132
+OBT in decimale =              826028252
+UTC =                         1316820177
+tempi[10] = ec 31 78 24 dc  1998 01 27 05:35:53:03442
+OBT in decimale =              829957340
+UTC =                         1320749264
+tempi[11] = ec 31 b4 2c d8  1998 01 27 05:36:53:06559
+OBT in decimale =              833891544
+UTC =                         1324683467
+tempi[12] = ec 31 f0 20 d8  1998 01 27 05:37:53:01869
+OBT in decimale =              837820632
+UTC =                         1328612553
+tempi[13] = ec 32 2c 28 d4  1998 01 27 05:38:53:04987
+OBT in decimale =              841754836
+UTC =                         1332546756
+tempi[14] = ec 32 68 30 d0  1998 01 27 05:39:53:08104
+OBT in decimale =              845689040
+UTC =                         1336480959
+tempi[15] = ec 32 a4 24 d0  1998 01 27 05:40:53:03414
+OBT in decimale =              849618128
+UTC =                         1340410045
+tempi[16] = ec 32 e0 2c cc  1998 01 27 05:41:53:06532
+OBT in decimale =              853552332
+UTC =                         1344344249
+tempi[17] = ec 33 1c 20 cc  1998 01 27 05:42:53:01843
+OBT in decimale =              857481420
+UTC =                         1348273336
+tempi[18] = ec 49 6d 2c 38  1998 01 27 07:18:06:06088
+OBT in decimale =             1231891512
+UTC =                         1722683286
+tempi[19] = ec 49 a9 20 38  1998 01 27 07:19:06:01399
+OBT in decimale =             1235820600
+UTC =                         1726612373
+tempi[20] = ec 49 e5 28 34  1998 01 27 07:20:06:04516
+OBT in decimale =             1239754804
+UTC =                         1730546576
+tempi[21] = ec 4a 21 30 30  1998 01 27 07:21:06:07632
+OBT in decimale =             1243689008
+UTC =                         1734480778
+tempi[22] = ec 4a 5d 24 30  1998 01 27 07:22:06:02944
+OBT in decimale =             1247618096
+UTC =                         1738409865
+tempi[23] = ec 4a 99 2c 2c  1998 01 27 07:23:06:06061
+OBT in decimale =             1251552300
+UTC =                         1742344068
+tempi[24] = ec 4a d5 20 2c  1998 01 27 07:24:06:01371
+OBT in decimale =             1255481388
+UTC =                         1746273154
+tempi[25] = ec 4b 11 28 28  1998 01 27 07:25:06:04489
+OBT in decimale =             1259415592
+UTC =                         1750207358
+tempi[26] = ec 4b 4d 30 24  1998 01 27 07:26:06:07606
+OBT in decimale =             1263349796
+UTC =                         1754141561
+tempi[27] = ec 4b 89 24 24  1998 01 27 07:27:06:02916
+OBT in decimale =             1267278884
+UTC =                         1758070647
+tempi[28] = ec 61 97 29 7f  1998 01 27 09:01:12:04815
+OBT in decimale =             1637296511
+UTC =                         2128088148
+tempi[29] = ec 61 d3 31 7b  1998 01 27 09:02:12:07932
+OBT in decimale =             1641230715
+UTC =                         2132022350
+tempi[30] = ec 62 0f 25 7b  1998 01 27 09:03:12:03242
+OBT in decimale =             1645159803
+UTC =                         2135951437
+tempi[31] = ec 62 4b 2d 77  1998 01 27 09:04:12:06360
+OBT in decimale =             1649094007
+UTC =                         2139885640
+tempi[32] = ec 62 87 21 77  1998 01 27 09:05:12:01670
+OBT in decimale =             1653023095
+UTC =                         2143814726
+tempi[33] = ec 62 c3 29 73  1998 01 27 09:06:12:04788
+OBT in decimale =             1656957299
+UTC =                         2147748930
+tempi[34] = ec 62 ff 31 6f  1998 01 27 09:07:12:07905
+OBT in decimale =             1660891503
+UTC =                         2151683133
+tempi[35] = ec 63 3b 25 6f  1998 01 27 09:08:12:03216
+OBT in decimale =             1664820591
+UTC =                         2155612220
+tempi[36] = ec 63 77 2d 6b  1998 01 27 09:09:12:06333
+OBT in decimale =             1668754795
+UTC =                         2159546422
+tempi[37] = ec 63 b3 21 6b  1998 01 27 09:10:12:01644
+OBT in decimale =             1672683883
+UTC =                         2163475509
+tempi[38] = ec 79 d1 2a 6e  1998 01 27 10:44:34:04970
+OBT in decimale =             2043751022
+UTC =                         2534542521
+tempi[39] = ec 7a 0d 1e 6e  1998 01 27 10:45:34:00280
+OBT in decimale =             2047680110
+UTC =                         2538471608
+tempi[40] = ec 7a 49 26 6a  1998 01 27 10:46:34:03397
+OBT in decimale =             2051614314
+UTC =                         2542405810
+tempi[41] = ec 7a 85 2e 66  1998 01 27 10:47:34:06513
+OBT in decimale =             2055548518
+UTC =                         2546340012
+tempi[42] = ec 7a c1 22 66  1998 01 27 10:48:34:01824
+OBT in decimale =             2059477606
+UTC =                         2550269099
+tempi[43] = ec 7a fd 2a 62  1998 01 27 10:49:34:04941
+OBT in decimale =             2063411810
+UTC =                         2554203302
+tempi[44] = ec 7b 39 1e 62  1998 01 27 10:50:34:00251
+OBT in decimale =             2067340898
+UTC =                         2558132388
+tempi[45] = ec 7b 75 26 5e  1998 01 27 10:51:34:03368
+OBT in decimale =             2071275102
+UTC =                         2562066591
+tempi[46] = ec 7b b1 2e 5a  1998 01 27 10:52:34:06485
+OBT in decimale =             2075209306
+UTC =                         2566000794
+tempi[47] = ec 7b ed 22 5a  1998 01 27 10:53:34:01796
+OBT in decimale =             2079138394
+UTC =                         2569929881
+tempi[48] = ec 92 0c 26 99  1998 01 27 12:27:57:03260
+OBT in decimale =             2450269849
+UTC =                         2941061208
+tempi[49] = ec 92 48 2e 96  1998 01 27 12:28:57:06377
+OBT in decimale =             2454204054
+UTC =                         2944995411
+tempi[50] = ec 92 84 22 96  1998 01 27 12:29:57:01687
+OBT in decimale =             2458133142
+UTC =                         2948924498
+tempi[51] = ec 92 c0 2a 92  1998 01 27 12:30:57:04804
+OBT in decimale =             2462067346
+UTC =                         2952858700
+tempi[52] = ec 92 fc 1e 92  1998 01 27 12:31:57:00115
+OBT in decimale =             2465996434
+UTC =                         2956787787
+tempi[53] = ec 93 38 26 8e  1998 01 27 12:32:57:03231
+OBT in decimale =             2469930638
+UTC =                         2960721989
+tempi[54] = ec 93 74 2e 8a  1998 01 27 12:33:57:06348
+OBT in decimale =             2473864842
+UTC =                         2964656192
+tempi[55] = ec 93 b0 22 8a  1998 01 27 12:34:57:01658
+OBT in decimale =             2477793930
+UTC =                         2968585279
+tempi[56] = ec 93 ec 2a 86  1998 01 27 12:35:57:04776
+OBT in decimale =             2481728134
+UTC =                         2972519482
+tempi[57] = ec 94 28 1e 86  1998 01 27 12:36:57:00086
+OBT in decimale =             2485657222
+UTC =                         2976448568
+tempi[58] = ec aa 39 29 8c  1998 01 27 14:11:06:04206
+OBT in decimale =             2855872908
+UTC =                         3346664132
+tempi[59] = ec aa 75 31 88  1998 01 27 14:12:06:07322
+OBT in decimale =             2859807112
+UTC =                         3350598335
+tempi[60] = ec aa b1 25 88  1998 01 27 14:13:06:02634
+OBT in decimale =             2863736200
+UTC =                         3354527422
+tempi[61] = ec aa ed 2d 84  1998 01 27 14:14:06:05750
+OBT in decimale =             2867670404
+UTC =                         3358461624
+tempi[62] = ec ab 29 21 84  1998 01 27 14:15:06:01061
+OBT in decimale =             2871599492
+UTC =                         3362390711
+tempi[63] = ec ab 65 29 80  1998 01 27 14:16:06:04177
+OBT in decimale =             2875533696
+UTC =                         3366324913
+tempi[64] = ec ab a1 31 7c  1998 01 27 14:17:06:07294
+OBT in decimale =             2879467900
+UTC =                         3370259116
+tempi[65] = ec ab dd 25 7c  1998 01 27 14:18:06:02605
+OBT in decimale =             2883396988
+UTC =                         3374188203
+tempi[66] = ec ac 19 2d 78  1998 01 27 14:19:06:05721
+OBT in decimale =             2887331192
+UTC =                         3378122405
+tempi[67] = ec ac 55 21 78  1998 01 27 14:20:06:01032
+OBT in decimale =             2891260280
+UTC =                         3382051492
+tempi[68] = ec c2 6e 2e 51  1998 01 27 15:54:23:05865
+OBT in decimale =             3262000721
+UTC =                         3752791812
+tempi[69] = ec c2 aa 22 51  1998 01 27 15:55:23:01175
+OBT in decimale =             3265929809
+UTC =                         3756720898
+tempi[70] = ec c2 e6 2a 4d  1998 01 27 15:56:23:04292
+OBT in decimale =             3269864013
+UTC =                         3760655101
+tempi[71] = ec c3 22 1e 4d  1998 01 27 15:57:22:99603
+OBT in decimale =             3273793101
+UTC =                         3764584188
+tempi[72] = ec c3 5e 26 49  1998 01 27 15:58:23:02719
+OBT in decimale =             3277727305
+UTC =                         3768518390
+tempi[73] = ec c3 9a 2e 45  1998 01 27 15:59:23:05836
+OBT in decimale =             3281661509
+UTC =                         3772452593
+tempi[74] = ec c3 d6 22 45  1998 01 27 16:00:22:93340
+OBT in decimale =             3285590597
+UTC =                         3776376563
+tempi[75] = ec c4 12 2a 41  1998 01 27 16:01:22:96457
+OBT in decimale =             3289524801
+UTC =                         3780310766
+tempi[76] = ec c4 4e 1e 41  1998 01 27 16:02:22:91768
+OBT in decimale =             3293453889
+UTC =                         3784239853
+tempi[77] = ec c4 8a 26 3d  1998 01 27 16:03:22:94885
+OBT in decimale =             3297388093
+UTC =                         3788174056
+tempi[78] = ec da 9e 22 f7  1998 01 27 17:37:35:01223
+OBT in decimale =             3667796727
+UTC =                         4158587682
+tempi[79] = ec da da 2a f3  1998 01 27 17:38:35:04340
+OBT in decimale =             3671730931
+UTC =                         4162521884
+tempi[80] = ec db 16 1e f3  1998 01 27 17:39:34:99651
+OBT in decimale =             3675660019
+UTC =                         4166450971
+tempi[81] = ec db 52 26 ef  1998 01 27 17:40:35:02767
+OBT in decimale =             3679594223
+UTC =                         4170385173
+tempi[82] = ec db 8e 2e eb  1998 01 27 17:41:35:05884
+OBT in decimale =             3683528427
+UTC =                         4174319376
+tempi[83] = ec db ca 22 eb  1998 01 27 17:42:35:01195
+OBT in decimale =             3687457515
+UTC =                         4178248463
+tempi[84] = ec dc 06 2a e7  1998 01 27 17:43:35:04312
+OBT in decimale =             3691391719
+UTC =                         4182182666
+tempi[85] = ec dc 42 1e e7  1998 01 27 17:44:34:99622
+OBT in decimale =             3695320807
+UTC =                         4186111752
+tempi[86] = ec dc 7e 26 e3  1998 01 27 17:45:35:02739
+OBT in decimale =             3699255011
+UTC =                         4190045955
+tempi[87] = ec dc ba 2e df  1998 01 27 17:46:35:05856
+OBT in decimale =             3703189215
+UTC =                         4193980158
+tempi[88] = ec f2 d8 23 e3  1998 01 27 19:20:57:01376
+OBT in decimale =             4074251235
+UTC =                         4565042054
+tempi[89] = ec f3 14 2b df  1998 01 27 19:21:57:04493
+OBT in decimale =             4078185439
+UTC =                         4568976257
+tempi[90] = ec f3 50 1f df  1998 01 27 19:22:56:99804
+OBT in decimale =             4082114527
+UTC =                         4572905344
+tempi[91] = ec f3 8c 27 db  1998 01 27 19:23:57:02920
+OBT in decimale =             4086048731
+UTC =                         4576839546
+tempi[92] = ec f3 c8 2f d7  1998 01 27 19:24:57:06037
+OBT in decimale =             4089982935
+UTC =                         4580773748
+tempi[93] = ec f4 04 23 d7  1998 01 27 19:25:57:01348
+OBT in decimale =             4093912023
+UTC =                         4584702835
+tempi[94] = ec f4 40 2b d3  1998 01 27 19:26:57:04465
+OBT in decimale =             4097846227
+UTC =                         4588637038
+tempi[95] = ec f4 7c 1f d3  1998 01 27 19:27:56:99775
+OBT in decimale =             4101775315
+UTC =                         4592566125
+tempi[96] = ec f4 b8 27 cf  1998 01 27 19:28:57:02892
+OBT in decimale =             4105709519
+UTC =                         4596500327
+tempi[97] = ec f4 f4 2f cb  1998 01 27 19:29:57:06009
+OBT in decimale =             4109643723
+UTC =                         4600434530
+tempi[98] = ed 0b 1b 21 de  1998 01 27 21:04:28:00380
+OBT in decimale =              186327518
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4109643723
+times.OBT[cur] =             4481294813
+UTC =                         4972085497
+tempi[99] = ed 0b 57 29 da  1998 01 27 21:05:28:03497
+OBT in decimale =              190261722
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4481294813
+times.OBT[cur] =             4485229017
+UTC =                         4976019700
+tempi[100] = ed 0b 93 1d da  1998 01 27 21:06:27:98807
+OBT in decimale =              194190810
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4485229017
+times.OBT[cur] =             4489158105
+UTC =                         4979948786
+tempi[101] = ed 0b cf 25 d6  1998 01 27 21:07:28:01924
+OBT in decimale =              198125014
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4489158105
+times.OBT[cur] =             4493092309
+UTC =                         4983882989
+tempi[102] = ed 0c 0b 2d d2  1998 01 27 21:08:28:05041
+OBT in decimale =              202059218
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4493092309
+times.OBT[cur] =             4497026513
+UTC =                         4987817192
+tempi[103] = ed 0c 47 21 d2  1998 01 27 21:09:28:00352
+OBT in decimale =              205988306
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4497026513
+times.OBT[cur] =             4500955601
+UTC =                         4991746279
+tempi[104] = ed 0c 83 29 ce  1998 01 27 21:10:28:03469
+OBT in decimale =              209922510
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4500955601
+times.OBT[cur] =             4504889805
+UTC =                         4995680481
+tempi[105] = ed 0c bf 1d ce  1998 01 27 21:11:27:98779
+OBT in decimale =              213851598
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4504889805
+times.OBT[cur] =             4508818893
+UTC =                         4999609568
+tempi[106] = ed 0c fb 25 ca  1998 01 27 21:12:28:01896
+OBT in decimale =              217785802
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4508818893
+times.OBT[cur] =             4512753097
+UTC =                         5003543771
+tempi[107] = ed 0d 37 2d c7  1998 01 27 21:13:28:05012
+OBT in decimale =              221720007
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4512753097
+times.OBT[cur] =             4516687302
+UTC =                         5007477973
+tempi[108] = ed 23 56 26 97  1998 01 27 22:47:51:02016
+OBT in decimale =              592848535
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4516687302
+times.OBT[cur] =             4887815830
+UTC =                         5378606377
+tempi[109] = ed 23 92 2e 93  1998 01 27 22:48:51:05132
+OBT in decimale =              596782739
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4887815830
+times.OBT[cur] =             4891750034
+UTC =                         5382540579
+tempi[110] = ed 23 ce 22 93  1998 01 27 22:49:51:00443
+OBT in decimale =              600711827
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4891750034
+times.OBT[cur] =             4895679122
+UTC =                         5386469666
+tempi[111] = ed 24 0a 2a 8f  1998 01 27 22:50:51:03560
+OBT in decimale =              604646031
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4895679122
+times.OBT[cur] =             4899613326
+UTC =                         5390403869
+tempi[112] = ed 24 46 1e 90  1998 01 27 22:51:50:98871
+OBT in decimale =              608575120
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4899613326
+times.OBT[cur] =             4903542415
+UTC =                         5394332956
+tempi[113] = ed 24 82 26 8c  1998 01 27 22:52:51:01988
+OBT in decimale =              612509324
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4903542415
+times.OBT[cur] =             4907476619
+UTC =                         5398267159
+tempi[114] = ed 24 be 2e 88  1998 01 27 22:53:51:05105
+OBT in decimale =              616443528
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4907476619
+times.OBT[cur] =             4911410823
+UTC =                         5402201362
+tempi[115] = ed 24 fa 22 88  1998 01 27 22:54:51:00415
+OBT in decimale =              620372616
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4911410823
+times.OBT[cur] =             4915339911
+UTC =                         5406130448
+tempi[116] = ed 25 36 2a 84  1998 01 27 22:55:51:03532
+OBT in decimale =              624306820
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4915339911
+times.OBT[cur] =             4919274115
+UTC =                         5410064651
+tempi[117] = ed 3b 92 2c 43  1998 01 28 00:31:15:04021
+OBT in decimale =              999435331
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             4919274115
+times.OBT[cur] =             5294402626
+UTC =                          122882635
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5410064651
+times.UTC[cur] =             5785193034
+tempi[118] = ed 3b ce 20 43  1998 01 28 00:32:14:99331
+OBT in decimale =             1003364419
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5294402626
+times.OBT[cur] =             5298331714
+UTC =                          126811722
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5785193034
+times.UTC[cur] =             5789122121
+tempi[119] = ed 3c 0a 28 3f  1998 01 28 00:33:15:02448
+OBT in decimale =             1007298623
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5298331714
+times.OBT[cur] =             5302265918
+UTC =                          130745924
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5789122121
+times.UTC[cur] =             5793056323
+tempi[120] = ed 3c 46 30 3b  1998 01 28 00:34:15:05565
+OBT in decimale =             1011232827
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5302265918
+times.OBT[cur] =             5306200122
+UTC =                          134680127
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5793056323
+times.UTC[cur] =             5796990526
+tempi[121] = ed 3c 82 24 3b  1998 01 28 00:35:15:00876
+OBT in decimale =             1015161915
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5306200122
+times.OBT[cur] =             5310129210
+UTC =                          138609214
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5796990526
+times.UTC[cur] =             5800919613
+tempi[122] = ed 3c be 2c 37  1998 01 28 00:36:15:03993
+OBT in decimale =             1019096119
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5310129210
+times.OBT[cur] =             5314063414
+UTC =                          142543417
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5800919613
+times.UTC[cur] =             5804853816
+tempi[123] = ed 3c fa 20 37  1998 01 28 00:37:14:99303
+OBT in decimale =             1023025207
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5314063414
+times.OBT[cur] =             5317992502
+UTC =                          146472503
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5804853816
+times.UTC[cur] =             5808782902
+tempi[124] = ed 3d 36 28 33  1998 01 28 00:38:15:02420
+OBT in decimale =             1026959411
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5317992502
+times.OBT[cur] =             5321926706
+UTC =                          150406706
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5808782902
+times.UTC[cur] =             5812717105
+tempi[125] = ed 3d 72 30 2f  1998 01 28 00:39:15:05536
+OBT in decimale =             1030893615
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5321926706
+times.OBT[cur] =             5325860910
+UTC =                          154340908
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5812717105
+times.UTC[cur] =             5816651307
+tempi[126] = ed 53 c5 1e 09  1998 01 28 02:14:29:98252
+OBT in decimale =             1405427209
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5325860910
+times.OBT[cur] =             5700394504
+UTC =                          528874374
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             5816651307
+times.UTC[cur] =             6191184773
+tempi[127] = ed 54 01 26 05  1998 01 28 02:15:30:01369
+OBT in decimale =             1409361413
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5700394504
+times.OBT[cur] =             5704328708
+UTC =                          532808577
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6191184773
+times.UTC[cur] =             6195118976
+tempi[128] = ed 54 3d 2e 01  1998 01 28 02:16:30:04486
+OBT in decimale =             1413295617
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5704328708
+times.OBT[cur] =             5708262912
+UTC =                          536742780
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6195118976
+times.UTC[cur] =             6199053179
+tempi[129] = ed 54 79 22 01  1998 01 28 02:17:29:99797
+OBT in decimale =             1417224705
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5708262912
+times.OBT[cur] =             5712192000
+UTC =                          540671867
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6199053179
+times.UTC[cur] =             6202982266
+tempi[130] = ed 54 b5 29 fd  1998 01 28 02:18:30:02914
+OBT in decimale =             1421158909
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5712192000
+times.OBT[cur] =             5716126204
+UTC =                          544606070
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6202982266
+times.UTC[cur] =             6206916469
+tempi[131] = ed 54 f1 1d fd  1998 01 28 02:19:29:98224
+OBT in decimale =             1425087997
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5716126204
+times.OBT[cur] =             5720055292
+UTC =                          548535156
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6206916469
+times.UTC[cur] =             6210845555
+tempi[132] = ed 55 2d 25 f9  1998 01 28 02:20:29:93534
+OBT in decimale =             1429022201
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5720055292
+times.OBT[cur] =             5723989496
+UTC =                          552464242
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6210845555
+times.UTC[cur] =             6214774641
+tempi[133] = ed 55 69 2d f5  1998 01 28 02:21:29:96651
+OBT in decimale =             1432956405
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5723989496
+times.OBT[cur] =             5727923700
+UTC =                          556398445
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6214774641
+times.UTC[cur] =             6218708844
+tempi[134] = ed 55 a5 21 f5  1998 01 28 02:22:29:91961
+OBT in decimale =             1436885493
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5727923700
+times.OBT[cur] =             5731852788
+UTC =                          560327532
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6218708844
+times.UTC[cur] =             6222637931
+tempi[135] = ed 6b f7 28 8e  1998 01 28 03:57:44:02153
+OBT in decimale =             1811359886
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             5731852788
+times.OBT[cur] =             6106327181
+UTC =                          934806915
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6222637931
+times.UTC[cur] =             6597117314
+tempi[136] = ed 6c 33 30 8a  1998 01 28 03:58:44:05270
+OBT in decimale =             1815294090
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6106327181
+times.OBT[cur] =             6110261385
+UTC =                          938741118
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6597117314
+times.UTC[cur] =             6601051517
+tempi[137] = ed 6c 6f 24 8a  1998 01 28 03:59:44:00580
+OBT in decimale =             1819223178
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6110261385
+times.OBT[cur] =             6114190473
+UTC =                          942670204
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6601051517
+times.UTC[cur] =             6604980603
+tempi[138] = ed 6c ab 2c 86  1998 01 28 04:00:44:03698
+OBT in decimale =             1823157382
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6114190473
+times.OBT[cur] =             6118124677
+UTC =                          946604408
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6604980603
+times.UTC[cur] =             6608914807
+tempi[139] = ed 6c e7 20 86  1998 01 28 04:01:43:99008
+OBT in decimale =             1827086470
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6118124677
+times.OBT[cur] =             6122053765
+UTC =                          950533494
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6608914807
+times.UTC[cur] =             6612843893
+tempi[140] = ed 6d 23 28 82  1998 01 28 04:02:44:02125
+OBT in decimale =             1831020674
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6122053765
+times.OBT[cur] =             6125987969
+UTC =                          954467697
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6612843893
+times.UTC[cur] =             6616778096
+tempi[141] = ed 6d 5f 30 7e  1998 01 28 04:03:44:05242
+OBT in decimale =             1834954878
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6125987969
+times.OBT[cur] =             6129922173
+UTC =                          958401899
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6616778096
+times.UTC[cur] =             6620712298
+tempi[142] = ed 6d 9b 24 6e  1998 01 28 04:04:44:00552
+OBT in decimale =             1838883950
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6129922173
+times.OBT[cur] =             6133851245
+UTC =                          962330986
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6620712298
+times.UTC[cur] =             6624641385
+tempi[143] = ed 6d d7 2c 6a  1998 01 28 04:05:44:03669
+OBT in decimale =             1842818154
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6133851245
+times.OBT[cur] =             6137785449
+UTC =                          966265189
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6624641385
+times.UTC[cur] =             6628575588
+tempi[144] = ed 6e 13 20 6a  1998 01 28 04:06:43:98979
+OBT in decimale =             1846747242
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6137785449
+times.OBT[cur] =             6141714537
+UTC =                          970194275
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6628575588
+times.UTC[cur] =             6632504674
+tempi[145] = ed 84 2f 24 ac  1998 01 28 05:41:04:00455
+OBT in decimale =             2217682092
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6141714537
+times.OBT[cur] =             6512649387
+UTC =                         1341129002
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             6632504674
+times.UTC[cur] =             7003439401
+tempi[146] = ed 84 6b 2c a8  1998 01 28 05:42:04:03572
+OBT in decimale =             2221616296
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6512649387
+times.OBT[cur] =             6516583591
+UTC =                         1345063205
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7003439401
+times.UTC[cur] =             7007373604
+tempi[147] = ed 84 a7 20 a8  1998 01 28 05:43:03:98883
+OBT in decimale =             2225545384
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6516583591
+times.OBT[cur] =             6520512679
+UTC =                         1348992292
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7007373604
+times.UTC[cur] =             7011302691
+tempi[148] = ed 84 e3 28 a4  1998 01 28 05:44:04:01999
+OBT in decimale =             2229479588
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6520512679
+times.OBT[cur] =             6524446883
+UTC =                         1352926494
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7011302691
+times.UTC[cur] =             7015236893
+tempi[149] = ed 85 1f 30 a0  1998 01 28 05:45:04:05116
+OBT in decimale =             2233413792
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6524446883
+times.OBT[cur] =             6528381087
+UTC =                         1356860697
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7015236893
+times.UTC[cur] =             7019171096
+tempi[150] = ed 85 5b 24 a0  1998 01 28 05:46:04:00426
+OBT in decimale =             2237342880
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6528381087
+times.OBT[cur] =             6532310175
+UTC =                         1360789783
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7019171096
+times.UTC[cur] =             7023100182
+tempi[151] = ed 85 97 2c 9d  1998 01 28 05:47:04:03543
+OBT in decimale =             2241277085
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6532310175
+times.OBT[cur] =             6536244380
+UTC =                         1364723986
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7023100182
+times.UTC[cur] =             7027034385
+tempi[152] = ed 85 d3 20 9d  1998 01 28 05:48:03:98854
+OBT in decimale =             2245206173
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6536244380
+times.OBT[cur] =             6540173468
+UTC =                         1368653073
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7027034385
+times.UTC[cur] =             7030963472
+tempi[153] = ed 86 0f 28 99  1998 01 28 05:49:03:94164
+OBT in decimale =             2249140377
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6540173468
+times.OBT[cur] =             6544107672
+UTC =                         1372582159
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7030963472
+times.UTC[cur] =             7034892558
+tempi[154] = ed 86 4b 30 95  1998 01 28 05:50:03:97281
+OBT in decimale =             2253074581
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6544107672
+times.OBT[cur] =             6548041876
+UTC =                         1376516362
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7034892558
+times.UTC[cur] =             7038826761
+tempi[155] = ed 9c 6a 20 d8  1998 01 28 07:24:26:98745
+OBT in decimale =             2624200920
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6548041876
+times.OBT[cur] =             6919168215
+UTC =                         1747647690
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7038826761
+times.UTC[cur] =             7409958089
+tempi[156] = ed 9c a6 28 d4  1998 01 28 07:25:27:01863
+OBT in decimale =             2628135124
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6919168215
+times.OBT[cur] =             6923102419
+UTC =                         1751581893
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7409958089
+times.UTC[cur] =             7413892292
+tempi[157] = ed 9c e2 30 d0  1998 01 28 07:26:27:04980
+OBT in decimale =             2632069328
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6923102419
+times.OBT[cur] =             6927036623
+UTC =                         1755516096
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7413892292
+times.UTC[cur] =             7417826495
+tempi[158] = ed 9d 1e 24 d0  1998 01 28 07:27:27:00290
+OBT in decimale =             2635998416
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6927036623
+times.OBT[cur] =             6930965711
+UTC =                         1759445182
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7417826495
+times.UTC[cur] =             7421755581
+tempi[159] = ed 9d 5a 2c cc  1998 01 28 07:28:27:03407
+OBT in decimale =             2639932620
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6930965711
+times.OBT[cur] =             6934899915
+UTC =                         1763379385
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7421755581
+times.UTC[cur] =             7425689784
+tempi[160] = ed 9d 96 20 cc  1998 01 28 07:29:26:98718
+OBT in decimale =             2643861708
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6934899915
+times.OBT[cur] =             6938829003
+UTC =                         1767308472
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7425689784
+times.UTC[cur] =             7429618871
+tempi[161] = ed 9d d2 28 c8  1998 01 28 07:30:27:01835
+OBT in decimale =             2647795912
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6938829003
+times.OBT[cur] =             6942763207
+UTC =                         1771242675
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7429618871
+times.UTC[cur] =             7433553074
+tempi[162] = ed 9e 0e 30 c4  1998 01 28 07:31:27:04951
+OBT in decimale =             2651730116
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6942763207
+times.OBT[cur] =             6946697411
+UTC =                         1775176877
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7433553074
+times.UTC[cur] =             7437487276
+tempi[163] = ed 9e 4a 24 c4  1998 01 28 07:32:27:00262
+OBT in decimale =             2655659204
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6946697411
+times.OBT[cur] =             6950626499
+UTC =                         1779105964
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7437487276
+times.UTC[cur] =             7441416363
+tempi[164] = ed 9e 86 2c c0  1998 01 28 07:33:27:03378
+OBT in decimale =             2659593408
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6950626499
+times.OBT[cur] =             6954560703
+UTC =                         1783040166
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7441416363
+times.UTC[cur] =             7445350565
+tempi[165] = ed b4 9a 1e 11  1998 01 28 09:07:38:97450
+OBT in decimale =             3029999121
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             6954560703
+times.OBT[cur] =             7324966416
+UTC =                         2153445753
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7445350565
+times.UTC[cur] =             7815756152
+tempi[166] = ed b4 d6 26 0d  1998 01 28 09:08:39:00567
+OBT in decimale =             3033933325
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7324966416
+times.OBT[cur] =             7328900620
+UTC =                         2157379956
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7815756152
+times.UTC[cur] =             7819690355
+tempi[167] = ed b5 12 2e 09  1998 01 28 09:09:39:03684
+OBT in decimale =             3037867529
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7328900620
+times.OBT[cur] =             7332834824
+UTC =                         2161314158
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7819690355
+times.UTC[cur] =             7823624557
+tempi[168] = ed b5 4e 22 09  1998 01 28 09:10:38:98994
+OBT in decimale =             3041796617
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7332834824
+times.OBT[cur] =             7336763912
+UTC =                         2165243245
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7823624557
+times.UTC[cur] =             7827553644
+tempi[169] = ed b5 8a 2a 05  1998 01 28 09:11:39:02111
+OBT in decimale =             3045730821
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7336763912
+times.OBT[cur] =             7340698116
+UTC =                         2169177447
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7827553644
+times.UTC[cur] =             7831487846
+tempi[170] = ed b5 c6 1e 05  1998 01 28 09:12:38:97421
+OBT in decimale =             3049659909
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7340698116
+times.OBT[cur] =             7344627204
+UTC =                         2173106534
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7831487846
+times.UTC[cur] =             7835416933
+tempi[171] = ed b6 02 26 01  1998 01 28 09:13:39:00538
+OBT in decimale =             3053594113
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7344627204
+times.OBT[cur] =             7348561408
+UTC =                         2177040737
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7835416933
+times.UTC[cur] =             7839351136
+tempi[172] = ed b6 3e 2d fd  1998 01 28 09:14:39:03656
+OBT in decimale =             3057528317
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7348561408
+times.OBT[cur] =             7352495612
+UTC =                         2180974940
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7839351136
+times.UTC[cur] =             7843285339
+tempi[173] = ed b6 7a 21 fd  1998 01 28 09:15:38:98966
+OBT in decimale =             3061457405
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7352495612
+times.OBT[cur] =             7356424700
+UTC =                         2184904026
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7843285339
+times.UTC[cur] =             7847214425
+tempi[174] = ed b6 b6 29 f9  1998 01 28 09:16:39:02083
+OBT in decimale =             3065391609
+riciclo del timer aggiungo 4294967295
+times.OBT[cur-1] =             7356424700
+times.OBT[cur] =             7360358904
+UTC =                         2188838229
+cambio giorno aggiungo 5662310399ull
+times.UTC[cur-1] =             7847214425
+times.UTC[cur] =             7851148628

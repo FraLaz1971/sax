@@ -1,0 +1,231 @@
+ 
+-------------------------------------------------------------------------------------
+ 
+
+ 
+OP  10855
+ 
+
+ 
+osservazione 001
+ 
+
+ 
+-------------------------------------------------------------------------------------
+ 
+curve totali ad alta risoluzione presenti :
+ 
+
+ 
+       0  op_10855/npd001.p1_1.tot.out
+ 
+       1  op_10855/npd001.p2_1.tot.out
+ 
+       2  op_10855/npd001.p3_1.tot.out
+ 
+       3  op_10855/npd001.p4_1.tot.out
+ 
+
+ 
+files presenti :            4
+ 
+trigger completi presenti :        1
+ 
+analizzato trigger n.        1
+ 
+
+ 
+condizione =       valido
+ 
+
+ 
+punteggio = 1
+ 
+
+ 
+------------------------------------------------------------------------------------
+ 
+
+ 
+Picco numero:  1
+ 
+ 
+ 
+Trigger scattato:
+ 
+   Schermo   Tinizio      Sigma
+ 
+       1      7.93750      10.0000
+ 
+       3      7.68750      16.0000
+ 
+ 
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+ 
+       1      8.054691
+ 
+       3      7.867191
+ 
+ 
+ 
+Fattore di rebin utilizzato:  1
+ 
+ 
+ 
+Durata evento:
+ 
+Minima:    0.0156198
+ 
+Media:    0.0234399
+ 
+Massima:    0.0390601
+ 
+ 
+ 
+Risultati della Cross-Correlazione:
+ 
+       3       1     0.741649      33
+ 
+ 
+ 
+FWHM=   0.00781250      0.00000   0.00781250      0.00000
+ 
+ 
+ 
+Punteggi ai vari schermi:
+ 
+ 
+ 
+Segnale sui seguenti schermi:
+ 
+ 
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+ 
+       1      7.93750      7.98438    0.0468798      89      7.98438
+ 
+       3      7.68750      7.73438    0.0468798     277      7.72656
+ 
+ 
+ 
+Picco numero  2:
+ 
+ 
+ 
+Nessuna condizione di trigger
+-------------------------------------------------------------------------------------
+
+OP  10855
+
+osservazione 001
+
+-------------------------------------------------------------------------------------
+curve totali ad alta risoluzione presenti :
+
+       0  op_10855/npd001.p1_1.tot.out
+       1  op_10855/npd001.p2_1.tot.out
+       2  op_10855/npd001.p3_1.tot.out
+       3  op_10855/npd001.p4_1.tot.out
+
+files presenti :            4
+trigger completi presenti :        1
+analizzato trigger n.        1
+
+condizione =       valido
+
+punteggio = 1
+
+------------------------------------------------------------------------------------
+
+Picco numero:  1
+ 
+Trigger scattato:
+   Schermo   Tinizio      Sigma
+       1      7.93750      10.0000
+       3      7.68750      16.0000
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+       1      8.054691
+       3      7.867191
+ 
+Fattore di rebin utilizzato:  1
+ 
+Durata evento:
+Minima:    0.0156198
+Media:    0.0234399
+Massima:    0.0390601
+ 
+Risultati della Cross-Correlazione:
+       3       1     0.741649      33
+ 
+FWHM=   0.00781250      0.00000   0.00781250      0.00000
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       1      7.93750      7.98438    0.0468798      89      7.98438
+       3      7.68750      7.73438    0.0468798     277      7.72656
+ 
+Picco numero  2:
+ 
+Nessuna condizione di trigger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

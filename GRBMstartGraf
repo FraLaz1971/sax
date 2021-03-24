@@ -1,0 +1,16 @@
+	;*********************************************
+	;**** comandi per lanciare l'applicazione ****
+	;*********************************************
+
+; **** estrae i parametri per il fit
+
+.compile tempo.pro
+.compile shell.pro
+.compile Burst__Define.pro
+.compile OP__Define.pro
+.compile OPlist__Define.pro
+.compile GRBMhandGraf__Define.pro
+.compile GGinterface__Define.pro
+.run GRBMhandGraf.pro
+.continue
+exit

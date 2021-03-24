@@ -1,0 +1,1636 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 24 24 571 818
+%%Title: enscript output
+%%For: Francesco Lazzarotto
+%%Creator: GNU enscript 1.5.0
+%%CreationDate: Thu May 31 12:30:39 2001
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.5 0
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch 
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+  
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+  
+  newfontname newfont definefont pop
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto 
+  d_w 0 rlineto 
+  0 d_h rlineto 
+  d_w neg 0 rlineto 
+  closepath
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+    
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def 
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill	  
+	} if
+      } for
+    } for
+    
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto 
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } { 
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto 
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont 
+    0 0 ul_h_ptsize 2 div sub moveto 
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack 
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint 
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-latin1 1.5 0
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/dotlessi     	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/user_header_p false def
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font findfont [10 0 0 10 0 0] makefont setfont
+/#copies 1 def
+%%BeginResource: procset Enscript-Header-simple 1.5 0
+
+/do_header {	% print default simple header
+  gsave
+    d_header_x d_header_y HFpt_h 3 div add translate
+
+    HF setfont
+    user_header_p {
+      5 0 moveto user_header_str show
+    } {
+      5 0 moveto fname show
+      45 0 rmoveto fmodstr show
+      45 0 rmoveto pagenumstr show
+    } ifelse
+
+  grestore
+} def
+%%EndResource
+/d_page_w 547 def
+/d_page_h 794 def
+/d_header_x 0 def
+/d_header_y 779 def
+/d_header_w 547 def
+/d_header_h 15 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 547 def
+/d_footer_h 0 def
+/d_output_w 547 def
+/d_output_h 779 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 1 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (1) def
+%%EndPageSetup
+do_header
+5 766 M
+(;-------------------------------------------------------------------------------) s
+5 755 M
+(;Oggetto GRBMhandler) s
+5 744 M
+(;Gestisce i dati del GRBM) s
+5 733 M
+(;-------------------------------------------------------------------------------) s
+5 711 M
+(;-------------------------------------------------------------------------------) s
+5 700 M
+(;1\).Create the object) s
+5 689 M
+(;-------------------------------------------------------------------------------        ) s
+5 667 M
+(                      function GRBMhandler::Init) s
+5 656 M
+(                        spawn, 'rm GRBM_han.log') s
+5 645 M
+(                        ;spawn, 'script1') s
+5 634 M
+(                        self.lista = OBJ_NEW\('OPlist', 10\)) s
+5 612 M
+(                        ;**** caricamento dati **** ) s
+5 601 M
+(                                      ) s
+5 590 M
+(                        self -> loadAll) s
+5 579 M
+(                        self.lista -> CountOPs) s
+5 568 M
+(                        ;self -> analyseAll) s
+5 557 M
+(                        self.interface = OBJ_NEW\('Ginterface', self\)) s
+5 546 M
+(                        print, 'oggetto GRBMhandler inizializzato'  ) s
+5 524 M
+(           ; **** STRUMENTO A REGIME : SI ENTRA NELLA ROUTINE PRINCIPALE ****) s
+5 502 M
+(                        self -> main) s
+5 491 M
+(                          return, 1  ;**** restituisce true se l'inizializzazione ha avut) s
+5 480 M
+(o successo                    ) s
+5 469 M
+(                      end) s
+5 458 M
+(;-------------------------------------------------------------------------------) s
+5 447 M
+(;2\).Create Cleanup method) s
+5 436 M
+(;-------------------------------------------------------------------------------        ) s
+5 414 M
+(                     pro GRBMhandler::Cleanup) s
+5 403 M
+(                        ;self->Strumhandler::cleanup) s
+5 381 M
+(                        OBJ_DESTROY, self.lista) s
+5 370 M
+(                        OBJ_DESTROY, self.interface) s
+5 359 M
+(                        OBJ_DESTROY, self) s
+5 348 M
+(                        print, 'GRBMhandler distrutto'  ) s
+5 337 M
+(                     end) s
+5 315 M
+(;-------------------------------------------------------------------------------) s
+5 304 M
+(                ;**** metodo che sceglie gli OP da caricare       ****) s
+5 293 M
+(                ;**** e carica i dati di ogni singolo OP          ****) s
+5 282 M
+(;-------------------------------------------------------------------------------) s
+5 260 M
+(        pro GRBMhandler::loadAll) s
+5 249 M
+(          close, 6) s
+5 238 M
+(          openr, 6, './OP_ordinati.txt' ; si apre il file che contiene la lista di OP pre) s
+5 227 M
+(senti) s
+5 216 M
+(          op_index = '') s
+5 205 M
+(          while \(NOT EOF\(6\)\) do begin) s
+5 194 M
+(            readf, 6, op_index) s
+5 183 M
+(            print, 'loading data OP_', op_index) s
+5 172 M
+(              print, 'salvo dati per OP '+op_index) s
+5 161 M
+(              self -> saveopdata, op_index      ) s
+5 150 M
+(          endwhile) s
+5 139 M
+(          close, 6) s
+5 128 M
+(          self -> datiOP) s
+5 117 M
+(        end             ) s
+5 95 M
+(;-------------------------------------------------------------------------------) s
+5 84 M
+(                ;**** metodo che salva il tempo di trigger              ****) s
+5 73 M
+(                ;**** per ogni burst contenuto in tutte le osservazioni ****) s
+5 62 M
+(                ;**** conntenute all'interno dell'OP                    ****) s
+5 51 M
+(;-------------------------------------------------------------------------------) s
+5 40 M
+(                ) s
+5 29 M
+(                  pro GRBMhandler::saveopdata, opindex            ) s
+5 18 M
+(                      close, 16) s
+5 7 M
+(                      pntrgs = 1b) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 2 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (2) def
+%%EndPageSetup
+do_header
+5 766 M
+(                      openw, 16, 'logburst.txt') s
+5 755 M
+(                      shell, opindex; **** estrae, fitta, converte e salva ****) s
+5 744 M
+(                      path4 = './op_'+opindex+'/') s
+5 733 M
+(                                           ) s
+5 722 M
+(                      obs = ''    ; stringa che identifica il n. dell'osservazione       ) s
+5 711 M
+(       ) s
+5 700 M
+(                      close, 3) s
+5 689 M
+(                      openr, 3, path4+'Observations.txt') s
+5 678 M
+(                         while \(NOT EOF\(3\)\) do begin) s
+5 667 M
+(                           readf, 3, obs        ; **** riferimento all'osservazione corre) s
+5 656 M
+(nte) s
+5 645 M
+(                           restore, path4+'TrigNum'+obs+'.dat'; recupera il n. di burst c) s
+5 634 M
+(ontenuti) s
+5 623 M
+(                                                 ; nell'osservazione) s
+5 612 M
+(                           printf, 16, 'numero di trigs in '+obs+' = ', pntrgs) s
+5 601 M
+(                           count = 0b) s
+5 590 M
+(                           while \(count LT pntrgs\) do begin) s
+5 579 M
+(                             restore, path4+'TimeResult'+obs+'_'+'.dat' ; **** legge ****) s
+5 568 M
+(                             self.lista -> saveopdata, opindex, obs, oldtimes[count]     ) s
+5 557 M
+(           ) s
+5 546 M
+(                            ;self.lista -> saveopdata, opindex, obs, newtime_UTC) s
+5 535 M
+(                             count = count + 1) s
+5 524 M
+(                           endwhile ) s
+5 513 M
+(                           ) s
+5 502 M
+(                           printf, 16, 'opindex = ', opindex ) s
+5 491 M
+(                           endwhile) s
+5 480 M
+(                           spawn, 'rm '+path4+'*.dat') s
+5 469 M
+(                           spawn, 'rm ./*.dat') s
+5 458 M
+(                      close, 3, 16) s
+5 447 M
+(                   end   ) s
+5 436 M
+(                   ) s
+5 425 M
+(;-------------------------------------------------------------------------------) s
+5 414 M
+(                ;**** metodo per aggiornare l'archivio ****) s
+5 403 M
+(;------------------------------------------------------------------------------          ) s
+5 392 M
+(   ) s
+5 381 M
+(                      ) s
+5 370 M
+(                      pro GRBMhandler::Aggiorna) s
+5 359 M
+(                        print, 'Aggiornamento archivio ...'                     ) s
+5 348 M
+(                      end) s
+5 326 M
+(;-------------------------------------------------------------------------------         ) s
+5 304 M
+(                ;****     metodo che restituisce        ****) s
+5 293 M
+(                ;**** informazioni sulla copertura      ****) s
+5 282 M
+(;-------------------------------------------------------------------------------         ) s
+5 249 M
+(                      pro GRBMhandler::coverage) s
+5 238 M
+(                        cover = self.lista -> coverage\(\)) s
+5 227 M
+(                        print) s
+5 216 M
+(                        print, 'copertura in archivio = ', cover, ' sec') s
+5 205 M
+(                        print, 'ore/min/sec = ', converti\(cover\)) s
+5 194 M
+(                        print) s
+5 183 M
+(                      end) s
+5 161 M
+(;-------------------------------------------------------------------------------) s
+5 150 M
+(; METODO CHE MOSTRA LA LISTA DI OP ) s
+5 139 M
+(;-------------------------------------------------------------------------------) s
+5 117 M
+(                      pro GRBMhandler::writelist) s
+5 106 M
+(                         print, 'GRBMhandler : mostro la lista di OP ') s
+5 95 M
+(                         self.lista -> writelist        ) s
+5 84 M
+(                      end) s
+5 62 M
+(;-------------------------------------------------------------------------------) s
+5 51 M
+(; METODO CHE MOSTRA IL CONTENUTO DI UN DETERMINATO OP DELLA LISTA) s
+5 40 M
+(;-------------------------------------------------------------------------------) s
+5 18 M
+(                      pro GRBMhandler::writeOP, op_id) s
+5 7 M
+(                         self.lista -> WriteOP, op_id) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 3 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (3) def
+%%EndPageSetup
+do_header
+5 766 M
+(                      end) s
+5 744 M
+(;-------------------------------------------------------------------------------) s
+5 733 M
+(;       metodo che seleziona OP e osservazione ) s
+5 722 M
+(;-------------------------------------------------------------------------------) s
+5 700 M
+(                      pro GRBMhandler::select, op_id, ob_s) s
+5 689 M
+(                         self.lista -> op_id, ob_s) s
+5 678 M
+(                      end) s
+5 667 M
+(                ) s
+5 645 M
+(;-------------------------------------------------------------------------------) s
+5 634 M
+(;       METODO CHE ANALIZZA TUTTI I BURST IN ARCHIVIO   ) s
+5 623 M
+(;-------------------------------------------------------------------------------         ) s
+5 590 M
+(        pro GRBMhandler::analyseAll) s
+5 579 M
+(           close, 6) s
+5 568 M
+(          ;close, 33 ) s
+5 557 M
+(          ;openw, 33, 'GRBM_han.log'    ; FILE DI LOG GENERALE) s
+5 546 M
+(        ) s
+5 535 M
+(          openr, 6, 'OP_ordinati.txt' ; si apre il file che contiene la lista di OP prese) s
+5 524 M
+(nti) s
+5 513 M
+(          op_index = '') s
+5 502 M
+(          obs_num = '') s
+5 491 M
+(          while \(NOT EOF\(6\)\) do begin    ; ciclo sugli OP in archivio) s
+5 480 M
+(            readf, 6, op_index) s
+5 469 M
+(            print, 'Accesso alle osservazioni nell''OP ', op_index) s
+5 458 M
+(              close, 55) s
+5 447 M
+(              openr, 55, './op_'+op_index+'/Observations.txt') s
+5 436 M
+(              while \(NOT EOF\(55\)\) do begin ; ciclo sulle osservazioni) s
+5 425 M
+(                readf, 55, obs_num                      ) s
+5 414 M
+(                self -> select, op_index, obs_num    ; seleziona OP e obs.) s
+5 403 M
+(                self -> cleanOP2                     ; pulisci il contenuto della directo) s
+5 392 M
+(ry) s
+5 381 M
+(                self -> analizza                     ; analizza i dati selezionati       ) s
+5 359 M
+(              endwhile) s
+5 348 M
+(              close, 55         ) s
+5 337 M
+(          endwhile) s
+5 326 M
+(          close, 6) s
+5 315 M
+(          close, 33) s
+5 304 M
+(        end             ) s
+5 282 M
+(;-------------------------------------------------------------------------------) s
+5 271 M
+(;       metodo che attiva lo strumento a regime) s
+5 260 M
+(;-------------------------------------------------------------------------------) s
+5 238 M
+(                pro GRBMhandler::main) s
+5 227 M
+(                  print, 'procedura main') s
+5 216 M
+(                  self.interface -> Enable; attiva l'interfaccia) s
+5 205 M
+(                end) s
+5 183 M
+(;-------------------------------------------------------------------------------) s
+5 172 M
+(;       metodo che carica dati relativi all'OP ) s
+5 161 M
+(;       \(durata, presenza, accensione strumento, ...\)) s
+5 150 M
+(;-------------------------------------------------------------------------------) s
+5 128 M
+(pro GRBMhandler::datiop) s
+5 106 M
+(                ;****** procedura che calcola *****) s
+5 95 M
+(                ;******  le durate degli OP   *****) s
+5 73 M
+(close, 1       ) s
+5 62 M
+(close, 2) s
+5 51 M
+(close, 3) s
+5 18 M
+(; **** dichiarazione costanti e variabili ****) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 4 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (4) def
+%%EndPageSetup
+do_header
+5 766 M
+(oldpos = 0) s
+5 755 M
+(gi = 0                  ; giorno di inizio op) s
+5 744 M
+(gf = 0                  ; giorno di fine op) s
+5 733 M
+(tempi1  = ulonarr\(3\)) s
+5 722 M
+(str_comp = ''           ; stringa per il confronto) s
+5 711 M
+(leva = ''               ; supporto per togliere la prima riga   ) s
+5 700 M
+(mezzanotte = 0b         ; flag sul caso a cavallo della mezzanotte) s
+5 689 M
+(off1 = 0ull             ; offset per il caso a cavallo della mezzanotte) s
+5 678 M
+(off2 = 0ull             ; offset per il caso maggiore di 24 ore) s
+5 667 M
+(b = '     '             ; variabile supporto per l'op_id) s
+5 656 M
+(c = 0) s
+5 645 M
+(sup1 = 0ull             ; variabile di supporto) s
+5 634 M
+(chi = 0                 ; variabile supporto per le ore    \(inizio\)) s
+5 623 M
+(cmi = 0b                ; variabile supporto per i minuti  \(inizio\)) s
+5 612 M
+(csi = 0b                ; variabile supporto per i secondi \(inizio\)) s
+5 601 M
+(chf = 0                 ; variabile supporto per le ore    \(fine\)) s
+5 590 M
+(cmf = 0b                ; variabile supporto per i minuti  \(fine\)) s
+5 579 M
+(csf = 0b                ; variabile supporto per i secondi \(fine\)) s
+5 568 M
+(op_loc = ''             ; variabile supporto per gli op sull'archivio locale) s
+5 557 M
+(ecc_loc = ''            ; gestisce una stringa eccezione nell'archivio locale ) s
+5 546 M
+(totsf = 0ull            ; ora di fine in secondi        ) s
+5 535 M
+(totsi = 0ull            ; ora di inizio in secondi) s
+5 524 M
+(durtotsec  = 0ull       ; variabile supporto per la durata in secondi) s
+5 513 M
+(durtotsec2  = 0.0       ; variabile supporto per la durata in secondi) s
+5 502 M
+(cur = 0l                ; cursore sull'archivio remoto) s
+5 491 M
+(cur2 = 0l               ; cursore sull'archivio locale) s
+5 480 M
+(tot_loc = 0             ; tempo copertura grbm in archivio locale                       ) s
+5 469 M
+(tot_rem = 0             ; tempo di copertura grbm) s
+5 458 M
+(b = string\(b\)           ; variabile supporto per l'identificativo di op) s
+5 447 M
+(c = long\(c\)             ;) s
+5 436 M
+(totale = 0l             ; variabile che contiene il totale in secondi di copertura) s
+5 425 M
+(pos = 0l                ; variabile che contiene la posizione del puntatore ) s
+5 414 M
+(                        ; alla posizione corrente nel file letto) s
+5 403 M
+(inf3 = 0                ; informazioni sul file 3                                        ) s
+5 392 M
+(        ) s
+5 381 M
+(si = '         si'      ; stringa vera) s
+5 370 M
+(no = '         no'      ; stringa falsa) s
+5 359 M
+(cond1 = 0b              ; condizione su op da contare) s
+5 348 M
+(cond2 = 0b              ; condizione su op da contare) s
+5 326 M
+(                        ; *********************************                             ) s
+5 315 M
+(                        ; *** si definisce una cartella ***) s
+5 304 M
+(                        ; ***      dell'archivio        ***) s
+5 293 M
+(                        ; *********************************) s
+5 271 M
+(op = create_struct\('tempass', 0ul, 'op_id', '', 'durh', 0, 'durm', 0 , 'durs', 0,'grbm_on) s
+5 260 M
+(', '', 'presente', '', 'copertura', 0ul, 'duration', 0ul\)  ) s
+5 249 M
+(                                                                                        ) s
+5 227 M
+(;lun = 9409                         ; *** numero di op da analizzare                     ) s
+5 216 M
+(                      ) s
+5 205 M
+(lun = 50) s
+5 194 M
+(archivio = replicate \(op, lun\)      ; *** definisce la struttura archivio) s
+5 183 M
+( ) s
+5 150 M
+(openr, 1, 'nfilist2.txt'                 ; *** si apre il primo   file di input: gli op i) s
+5 139 M
+(n archivio remoto) s
+5 128 M
+(openr, 3, 'OP_ordinati.txt'              ; *** si apre il secondo file di input: gli op i) s
+5 117 M
+(n archivio locale) s
+5 106 M
+(openw, 2, 'risultati1.txt'               ; *** si apre il file di output) s
+5 84 M
+(printf, 2, '        tempo  op-id     ore   minuti   secondi  grbm_on    presente  copertu) s
+5 73 M
+(ra') s
+5 51 M
+(        readf, 1, $) s
+5 40 M
+(        format = '\(a1\)', leva   ; togli la prima linea) s
+5 29 M
+(        cur = 0l) s
+5 18 M
+(        cur2 =0l) s
+5 7 M
+(        while \(cur LE \(lun-1\)\)AND\(NOT EOF\(3\)\) AND \(NOT EOF\(1\)\) do begin  ;W1 *** ciclo su) s
+_R
+S
+%%Page: (5) 5
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 5 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (5) def
+%%EndPageSetup
+do_header
+5 766 M
+( gli archivi da confrontare) s
+5 755 M
+(                off1 = 0) s
+5 744 M
+(                sup1 = 0ull) s
+5 733 M
+(                durtotsec = 0ull) s
+5 722 M
+(                durtotsec2 = 0ull) s
+5 711 M
+(                archivio[cur].durh = 0ull) s
+5 700 M
+(                chi = 0ull        ) s
+5 689 M
+(                cmi = 0ull      ) s
+5 678 M
+(                csi = 0ull       ) s
+5 667 M
+(                chf = 0ull) s
+5 656 M
+(                cmf = 0ull       ) s
+5 645 M
+(                csf = 0ull      ) s
+5 634 M
+(                cond1 = 0b ; *** inizializzato il controllo se il tempo e' da sommare) s
+5 623 M
+(                grbm_on = '') s
+5 612 M
+(                inf3 = fstat\(3\)) s
+5 601 M
+(                readf, 1, $) s
+5 590 M
+(                format = '\(\(a5,T7,I2,T17,I2,T20,I2,T23,I2,T26,I2,T36,I2,T39,I2,T42,I2,T49) s
+5 579 M
+(,a1\)\)', b, gi, chi, cmi, csi, gf, chf, cmf, csf,grbm_on) s
+5 568 M
+(                oldpos = inf3.cur_ptr) s
+5 557 M
+(                readf, 3, op_loc ; *** legge sul file di archivio locale) s
+5 546 M
+(                print, 'leggo la stringa ', op_loc              ) s
+5 535 M
+(                print, 'op in archivio locale ', op_loc ) s
+5 524 M
+(                print, 'op in archivio remoto ', b ) s
+5 513 M
+(                ) s
+5 502 M
+(                inf3 = fstat\(3\)) s
+5 491 M
+(                pos = inf3.cur_ptr) s
+5 480 M
+(                if \(ulong\(op_loc\) NE ulong\(b\)\) then begin ) s
+5 469 M
+(                        point_lun, 3, oldpos ; *** resta a leggere sull'op corrente      ) s
+5 458 M
+(          ) s
+5 447 M
+(                        archivio[cur].presente = no             ) s
+5 436 M
+(                endif else begin) s
+5 425 M
+(                        print, 'OP presente in archivio locale' ) s
+5 414 M
+(                        archivio[cur].presente = si) s
+5 403 M
+(                endelse) s
+5 392 M
+(                                                ) s
+5 381 M
+(                ) s
+5 370 M
+(                archivio[cur].op_id = b ; *** salva l'identificatore di op) s
+5 359 M
+(                ) s
+5 348 M
+(                ;print, ' giorno di inizio ', gi) s
+5 337 M
+(                ;print, ' giorno di fine ', gf) s
+5 326 M
+(                ) s
+5 304 M
+(                ;*** calcola la durata totale in secondi ***) s
+5 293 M
+(                ) s
+5 282 M
+(                if \(chf LT chi\)OR\(\(gf-gi\) NE 0\) then begin              ; *** gestisce il) s
+5 271 M
+( caso "a cavallo della mezzanotte") s
+5 260 M
+(                        mezzanotte = 1b) s
+5 249 M
+(                        off1 = 86400 - \(\(chi*3600\) + \(cmi*60\) + csi\)) s
+5 238 M
+(                        ) s
+5 227 M
+(                        if \(\(gf-gi\) GT 1\) then begin) s
+5 216 M
+(                                        printf, 2, 'op che dura oltre le 24 ore') s
+5 205 M
+(                                        print, 'op che dura oltre le 24 ore') s
+5 194 M
+(                                        off1 = off1 + \(\(\(gf - gi\) - 1\)*86400\)     ; nel c) s
+5 183 M
+(aso in cui l'op duri piu' di un giorno ) s
+5 172 M
+(                        endif) s
+5 161 M
+(                        ) s
+5 150 M
+(                                  ) s
+5 139 M
+(                        chi = 0) s
+5 128 M
+(                        cmi = 0 ) s
+5 117 M
+(                        csi = 0) s
+5 106 M
+(                endif   else    begin ) s
+5 95 M
+(                        off1 = 0) s
+5 84 M
+(                endelse) s
+5 73 M
+(                ) s
+5 62 M
+(                                ) s
+5 51 M
+(                ) s
+5 40 M
+(                ) s
+5 29 M
+(                totsf = \(chf*3600\) + \(cmf*60\) + csf) s
+5 18 M
+(                totsi = \(chi*3600\) + \(cmi*60\) + csi) s
+5 7 M
+(                durtotsec = totsf - totsi + off1        ) s
+_R
+S
+%%Page: (6) 6
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 6 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (6) def
+%%EndPageSetup
+do_header
+5 766 M
+(                durtotsec2 = durtotsec          ) s
+5 755 M
+(                ) s
+5 744 M
+(                tempi1 = converti\(durtotsec\) ; **** converti in ore/min/sec) s
+5 722 M
+(        ; **** salva la durata dell'OP ****     ) s
+5 700 M
+(                archivio[cur].durh = tempi1[0]) s
+5 689 M
+(                archivio[cur].durm = tempi1[1]) s
+5 678 M
+(                archivio[cur].durs = tempi1[2]) s
+5 667 M
+(                archivio[cur].duration = durtotsec2) s
+5 656 M
+(                ) s
+5 645 M
+(                ) s
+5 634 M
+(                ; *** controllo sull'accensione strumento ***) s
+5 612 M
+(                if \(grbm_on EQ '0'\) then begin) s
+5 601 M
+(                        archivio[cur].grbm_on = '       no' ) s
+5 590 M
+(                endif else begin) s
+5 579 M
+(                        if \(grbm_on EQ 'G'\) then begin) s
+5 568 M
+(                                archivio[cur].grbm_on = '       si') s
+5 557 M
+(                        endif else begin) s
+5 546 M
+(                                archivio[cur].grbm_on = '    boh') s
+5 535 M
+(                        endelse) s
+5 524 M
+(                endelse) s
+5 513 M
+(                ) s
+5 502 M
+(                ; *** salva il tempo assoluto ***) s
+5 491 M
+(                ) s
+5 480 M
+(                if \(cur EQ 0\) then begin) s
+5 469 M
+(                        archivio[cur].tempass = durtotsec2) s
+5 458 M
+(                endif else begin) s
+5 447 M
+(                        archivio[cur].tempass = archivio[cur-1].tempass + durtotsec2) s
+5 436 M
+(                endelse) s
+5 425 M
+(                ) s
+5 414 M
+(                ) s
+5 403 M
+(                ; *******************************************************) s
+5 392 M
+(                ; *** controllo sugli op presenti in archivio locale  ***) s
+5 381 M
+(                ; ***   calcolo della copertura in archivio locale    ***) s
+5 370 M
+(                ; ***            e di quella mancante                 ***) s
+5 359 M
+(                ; *******************************************************) s
+5 348 M
+(        ) s
+5 337 M
+(                cond1 = \(\(archivio[cur].presente EQ si\)AND\(archivio[cur].grbm_on EQ si\)\) ) s
+5 326 M
+(                cond2 = \(archivio[cur].presente EQ si\)) s
+5 315 M
+(                ) s
+5 304 M
+(                if \(cond2\)then begin) s
+5 293 M
+(                        totale = totale + durtotsec2   ) s
+5 282 M
+(                endif   ) s
+5 260 M
+(                ; *** salva la copertura parziale ***) s
+5 249 M
+(                ) s
+5 238 M
+(                archivio[cur].copertura = totale        ) s
+5 227 M
+(                ) s
+5 216 M
+(                ; *** stampa l'output su file e su schermo ***) s
+5 205 M
+(                ) s
+5 194 M
+(                printf, 2, 'op n. ', cur + 1 ) s
+5 183 M
+(                ;print, archivio[cur]) s
+5 172 M
+(                printf, 2, archivio[cur]) s
+5 161 M
+(                ;print, ' tempo parziale copertura osservazione grbm ', converti\(totale\) ) s
+5 150 M
+(                                         ) s
+5 139 M
+(                ;printf, 2, 'tempo parziale copertura osservazione grbm', converti\(totale) s
+5 128 M
+(\)) s
+5 95 M
+(          self -> transfer, archivio[cur]) s
+5 73 M
+(          cur = cur + 1       ; incrementa il cursore all'indice dell' archivio remoto) s
+5 62 M
+(        ) s
+5 51 M
+(          mezzanotte = 0b) s
+5 40 M
+(                                ) s
+5 29 M
+(        endwhile ;W1) s
+5 7 M
+(        print, '') s
+_R
+S
+%%Page: (7) 7
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 7 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (7) def
+%%EndPageSetup
+do_header
+5 766 M
+(        print, '*****                                *****') s
+5 755 M
+(        printf, 2, '') s
+5 744 M
+(        printf, 2, '*****                                *****') s
+5 733 M
+(        print, ' tempo totale copertura osservazione grbm ore/min/sec', converti\(totale\) ) s
+5 722 M
+(     ) s
+5 711 M
+(        printf, 2, ' tempo totale copertura osservazione grbm ore/min/sec', converti\(tota) s
+5 700 M
+(le\)     ) s
+5 689 M
+(                ) s
+5 678 M
+(        ) s
+5 667 M
+(        close, 1 ) s
+5 656 M
+(        close, 2) s
+5 645 M
+(        close, 3) s
+5 623 M
+(        ;read,'aspetta',  b) s
+5 612 M
+(        print, 'arrivederci e grazie') s
+5 590 M
+(end) s
+5 568 M
+(;-------------------------------------------------------------------------------) s
+5 557 M
+(; trasferisce i dati nei campi del relativo OP ;[]) s
+5 546 M
+(;-------------------------------------------------------------------------------) s
+5 524 M
+(        pro GRBMhandler::transfer, dati   ) s
+5 513 M
+(          ;print, 'sto trasferendo la durh = ', dati.durh) s
+5 502 M
+(          ;print, 'per l''OP ', dati.op_id) s
+5 491 M
+(          self.lista -> transfer, dati                    ) s
+5 480 M
+(        end) s
+5 458 M
+(;-------------------------------------------------------------------------------) s
+5 447 M
+(; METODO CHE SI SINCRONIZZA SU OSSERVAZIONE E OP CORRENTE) s
+5 436 M
+(;-------------------------------------------------------------------------------) s
+5 414 M
+(        function GRBMhandler::retrieve   ) s
+5 403 M
+(          close, 8, 9   ) s
+5 392 M
+(          coord = STRARR\(2\)) s
+5 381 M
+(          tempstring1 = '') s
+5 370 M
+(          tempstring2 = ''      ) s
+5 359 M
+(          openr, 8,  'AcOP.txt') s
+5 348 M
+(          readf, 8, tempstring1) s
+5 337 M
+(          close, 8      ) s
+5 326 M
+(          openr, 9,  'nobs.txt') s
+5 315 M
+(          readf, 9, tempstring2) s
+5 304 M
+(          close, 9                      ) s
+5 293 M
+(          print, 'OP corrente = ', tempstring1) s
+5 282 M
+(          print, 'osservazione corrente = ', tempstring2) s
+5 271 M
+(          coord[0] = tempstring1) s
+5 260 M
+(          coord[1] = tempstring2) s
+5 249 M
+(          return, coord                   ) s
+5 238 M
+(        end) s
+5 216 M
+(;-------------------------------------------------------------------------------) s
+5 205 M
+(; legge le curve nel particolare OP) s
+5 194 M
+(;-------------------------------------------------------------------------------) s
+5 172 M
+(        pro GRBMhandler::analizza         ) s
+5 161 M
+(           actualobs = STRARR\(2\)) s
+5 150 M
+(           print, 'analizzo i dati ' ) s
+5 139 M
+(           actualobs = self -> retrieve\(\) ; si sincronizza sui dati correnti) s
+5 128 M
+(           self -> unzip) s
+5 117 M
+(           self -> creacurve              ; crea le curve totali                         ) s
+5 106 M
+(           ) s
+5 95 M
+(           tn = 0b                         ) s
+5 84 M
+(           self -> SDI, 1b) s
+5 73 M
+(           close, 37 ) s
+5 62 M
+(           openr, 37, 'Again.tem' ; legge il numero di trigger) s
+5 51 M
+(           readf, 37, tn) s
+5 40 M
+(           print, 'GRBMhandler' ) s
+5 29 M
+(           print, 'osservazione contenente ', tn, ' trigger') s
+5 18 M
+(           at = 1b ; trigger analizzati ) s
+5 7 M
+(           while\(at LT tn\) do begin                               ) s
+_R
+S
+%%Page: (8) 8
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 8 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (8) def
+%%EndPageSetup
+do_header
+5 766 M
+(             self -> SDI, at + 1                  ; lancia il programma di analisi ) s
+5 755 M
+(             at = at + 1    ) s
+5 744 M
+(           endwhile     ) s
+5 733 M
+(           print, 'terminati i trigger per l''oss ', actualobs[1]        ) s
+5 722 M
+(           self -> cleanOP                                ) s
+5 711 M
+(           self -> zip) s
+5 700 M
+(        end) s
+5 678 M
+(;-------------------------------------------------------------------------------) s
+5 667 M
+(; SALVA LE DURATE NEL DATABASE) s
+5 656 M
+(;-------------------------------------------------------------------------------) s
+5 634 M
+(        pro GRBMhandler::saveduration, tn               ) s
+5 623 M
+(          restore, 'Dur_SDIres.dat'; recupera le durate e i flag) s
+5 612 M
+(          coord_9 = STRARR\(2\) ; conterra' OP_id e OBS_id) s
+5 601 M
+(          coord_9 = self -> retrieve\(\)) s
+5 590 M
+(          path = 'op_'+coord_9[0]) s
+5 579 M
+(          obs = coord_9[1]) s
+5 568 M
+(          print, 'GRBMhandler :') s
+5 557 M
+(          print, 'salvo le durate per OP '+coord_9[0]+' osservazione '+coord_9[1]) s
+5 546 M
+(          print, 'trigger n. ', tn) s
+5 535 M
+(          self.lista -> putduration, coord_9,tn , dur, trig                ) s
+5 524 M
+(        end) s
+5 491 M
+(;-------------------------------------------------------------------------------) s
+5 480 M
+(; SALVA I PUNTEGGI DURATE NEL DATABASE) s
+5 469 M
+(;-------------------------------------------------------------------------------) s
+5 447 M
+(        pro GRBMhandler::savepoints, tn         ) s
+5 436 M
+(          restore, 'Poi_SDIres.dat'; recupera le durate e i flag) s
+5 425 M
+(          coord_9 = STRARR\(2\) ; conterra' OP_id e OBS_id) s
+5 414 M
+(          coord_9 = self -> retrieve\(\) ; SI SINCRONIZZA SU OP E OSSERVAZIONE) s
+5 403 M
+(          path = 'op_'+coord_9[0]) s
+5 392 M
+(          obs = coord_9[1]) s
+5 381 M
+(          print, 'GRBMhandler :') s
+5 370 M
+(          print, 'salvo i punteggi per OP '+coord_9[0]+' osservazione '+coord_9[1]) s
+5 359 M
+(          print, 'trigger n. ', tn) s
+5 348 M
+(          self.lista -> putpoints, coord_9,tn , p, trig            ) s
+5 337 M
+(        end) s
+5 326 M
+(;-------------------------------------------------------------------------------) s
+5 315 M
+(; richiama il programma SDI ) s
+5 304 M
+(;-------------------------------------------------------------------------------) s
+5 282 M
+(        pro GRBMhandler::SDI, tn                ) s
+5 271 M
+(          print, 'programma SDI lanciato'       ) s
+5 260 M
+(          spawn, 'idl SDIStartup') s
+5 249 M
+(          self -> leggi) s
+5 238 M
+(          self -> saveduration, tn) s
+5 227 M
+(          self -> savepoints, tn           ) s
+5 216 M
+(        end) s
+5 194 M
+(;-------------------------------------------------------------------------------) s
+5 183 M
+(; pulisci l'OP da i file di elaborazione ) s
+5 172 M
+(;-------------------------------------------------------------------------------) s
+5 150 M
+(        pro GRBMhandler::cleanOP                ) s
+5 139 M
+(          ;print, 'cancello file di servizio') s
+5 128 M
+(          coord_9 = STRARR\(2\) ; conterra' OP_id e OBS_id) s
+5 117 M
+(          coord_9 = self -> retrieve\(\)) s
+5 106 M
+(          path = 'op_'+coord_9[0]) s
+5 95 M
+(          obs = coord_9[1]      ) s
+5 84 M
+(          spawn, 'rm  ./'+path+'/npd'+obs+'.p*grb*.log') s
+5 73 M
+(          ;print, 'rm  ./'+path+'/npd'+obs+'.p*grb*.log') s
+5 62 M
+(          spawn, 'rm  ./'+path+'/npd'+obs+'.p*.out') s
+5 51 M
+(          ;print, 'rm  ./'+path+'/npd'+obs+'.p*.out') s
+5 40 M
+(          spawn, 'rm  ./'+path+'/npd'+obs+'.p*.tot.out') s
+5 29 M
+(          ;print, 'rm  ./'+path+'/npd'+obs+'.p*.tot.out'           ) s
+5 18 M
+(        end) s
+5 7 M
+(;-------------------------------------------------------------------------------) s
+_R
+S
+%%Page: (9) 9
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 9 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (9) def
+%%EndPageSetup
+do_header
+5 766 M
+(; pulisci l'OP anche da i file estranei ) s
+5 755 M
+(;-------------------------------------------------------------------------------) s
+5 733 M
+(        pro GRBMhandler::cleanOP2               ) s
+5 722 M
+(          ;print, 'cancello file di servizio') s
+5 711 M
+(          coord_9 = STRARR\(2\) ; conterra' OP_id e OBS_id) s
+5 700 M
+(          coord_9 = self -> retrieve\(\)) s
+5 689 M
+(          path = 'op_'+coord_9[0]) s
+5 678 M
+(          obs = coord_9[1]      ) s
+5 667 M
+(          spawn, 'rm  ./'+path+'/npd*.p*grb*.log'         ) s
+5 656 M
+(          spawn, 'rm  ./'+path+'/npd*.p*.out'     ) s
+5 645 M
+(          spawn, 'rm  ./'+path+'/npd*.p*.tot.out'                  ) s
+5 634 M
+(        end) s
+5 623 M
+(;-------------------------------------------------------------------------------) s
+5 612 M
+(; CREA LE CURVE TOTALI ) s
+5 601 M
+(;-------------------------------------------------------------------------------) s
+5 579 M
+(        pro GRBMhandler::creacurve              ) s
+5 568 M
+(          print, 'genera le curve totali'       ) s
+5 557 M
+(          spawn, 'auto_fot_grbm_tot.exe'           ) s
+5 546 M
+(        end) s
+5 524 M
+(;-------------------------------------------------------------------------------) s
+5 513 M
+(; SELEZIONA OP E OSSERVAZIONE ) s
+5 502 M
+(;-------------------------------------------------------------------------------) s
+5 480 M
+(        pro GRBMhandler::select, opid, obs) s
+5 469 M
+(          ;print, 'mi sincronizzo su'     ) s
+5 458 M
+(          close, 8, 9   ) s
+5 447 M
+(          coord = STRARR\(2\)) s
+5 436 M
+(          tempstring1 = '') s
+5 425 M
+(          tempstring2 = ''      ) s
+5 414 M
+(          openw, 8,  'AcOP.txt') s
+5 403 M
+(          printf, 8, opid) s
+5 392 M
+(          close, 8      ) s
+5 381 M
+(          openw, 9,  'nobs.txt') s
+5 370 M
+(          printf, 9, obs) s
+5 359 M
+(          close, 9                      ) s
+5 348 M
+(          ;print, 'salvato OP corrente = ', opid) s
+5 337 M
+(          ;print, 'salvata osservazione selezionata = ', obs                    ) s
+5 326 M
+(        end) s
+5 293 M
+(;-------------------------------------------------------------------------------) s
+5 282 M
+(; LEGGI I DATI RELATIVI AD OSSERVAZIONE E OP SELEZIONATI) s
+5 271 M
+(;-------------------------------------------------------------------------------) s
+5 249 M
+(        pro GRBMhandler::leggi    ) s
+5 238 M
+(          close, 3) s
+5 227 M
+(          print, 'acquisisco risultati generati da SDI') s
+5 216 M
+(          tempstring = ''       ) s
+5 205 M
+(          openr, 3, 'SDIresult.txt') s
+5 194 M
+(          while\(NOT EOF\(3\)\) do begin) s
+5 183 M
+(            readf, 3, tempstring) s
+5 172 M
+(            openu,1,'GRBM_han.log',APPEND=1) s
+5 161 M
+(                printf,1,' ') s
+5 150 M
+(                printf,1,tempstring) s
+5 139 M
+(            close,1) s
+5 128 M
+(            endwhile                            ) s
+5 117 M
+(          close, 3        ) s
+5 106 M
+(        end) s
+5 73 M
+(;-------------------------------------------------------------------------------) s
+5 62 M
+(; METODO PER DECOMPRIMERE DATI NELL'OP CORRENTE) s
+5 51 M
+(;-------------------------------------------------------------------------------) s
+5 29 M
+(        pro GRBMhandler::unzip) s
+5 18 M
+(          coord_9 = STRARR\(2\)) s
+5 7 M
+(          coord_9 = self -> retrieve\(\)          ) s
+_R
+S
+%%Page: (10) 10
+%%BeginPageSetup
+_S
+24 24 translate
+/pagenum 10 def
+/fname (GRBMhandler__Define.pro) def
+/fdir () def
+/ftail (GRBMhandler__Define.pro) def
+% User defined strings:
+/fmodstr (Mon May 28 15:13:40 2001) def
+/pagenumstr (10) def
+%%EndPageSetup
+do_header
+5 766 M
+(          print, 'decomprime dati nell''OP '+coord_9[0]+' osservazione '+coord_9[1]) s
+5 755 M
+(          spawn, 'gzip -d op_'+coord_9[0]+'/npd'+coord_9[1]+'.p*grb*.gz'           ) s
+5 744 M
+(        end) s
+5 711 M
+(;-------------------------------------------------------------------------------) s
+5 700 M
+(; METODO PER COMPRIMERE DATI NELL'OP CORRENTE) s
+5 689 M
+(;-------------------------------------------------------------------------------) s
+5 667 M
+(        pro GRBMhandler::zip            ) s
+5 656 M
+(          coord_9 = STRARR\(2\)) s
+5 645 M
+(          coord_9 = self -> retrieve\(\)          ) s
+5 634 M
+(          print, 'comprime dati nell''OP '+coord_9[0]+' osservazione '+coord_9[1]) s
+5 623 M
+(          spawn, 'gzip  op_'+coord_9[0]+'/npd'+coord_9[1]+'.p*grb*'        ) s
+5 612 M
+(        end) s
+5 590 M
+(        ) s
+5 579 M
+(;-------------------------------------------------------------------------------) s
+5 568 M
+(;4.Define the object) s
+5 557 M
+(;-------------------------------------------------------------------------------) s
+5 546 M
+(                      pro GRBMhandler__Define) s
+5 535 M
+(                           struct={GRBMhandler,   $) s
+5 524 M
+(                           ;inherits Strumhandler,$) s
+5 513 M
+(                           interface:OBJ_NEW\(\),   $) s
+5 502 M
+(                           lista:OBJ_NEW\(\)        $) s
+5 491 M
+(                           ;...) s
+5 480 M
+(                                                  $) s
+5 469 M
+(                                 }) s
+5 458 M
+(                      end) s
+_R
+S
+%%Trailer
+%%Pages: 10
+%%DocumentNeededResources: font Courier-Bold Courier 
+%%EOF

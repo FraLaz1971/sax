@@ -1,0 +1,10 @@
+
+
+carattere = string(0b)
+a = 0b
+while(a LT 255b) do begin
+  print, 'stringa 1'+string(a)+'stringa2', a
+  a = a + 1b
+endwhile
+print, 'stringa 1'+string(a)+'stringa2', a
+end

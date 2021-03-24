@@ -1,0 +1,469 @@
+;-------------------------------------------------------------------------------
+;Oggetto GRBMhandler
+;Gestisce i dati del GRBM
+;-------------------------------------------------------------------------------
+;-------------------------------------------------------------------------------
+;1).Create the object
+;-------------------------------------------------------------------------------
+function GRBMhandler::Init
+self.lista = OBJ_NEW(’OPlist’, 10)
+;**** caricamento dati ****
+self -> loadAll
+self.interface = OBJ_NEW(’Ginterface’, self)
+print, ’oggetto GRBMhandler inizializzato’
+; **** STRUMENTO A REGIME : SI ENTRA NELLA ROUTINE PRINCIPALE ****
+self -> main
+return, 1 ;**** restituisce true se l’inizializzazione ha avuto successo
+end
+;-------------------------------------------------------------------------------
+;2).Create Cleanup method
+;-------------------------------------------------------------------------------
+pro GRBMhandler::Cleanup
+;self->Strumhandler::cleanup
+OBJ_DESTROY, self.lista
+OBJ_DESTROY, self.interface
+OBJ_DESTROY, self
+print, ’GRBMhandler distrutto’
+end
+;-------------------------------------------------------------------------------
+;**** metodo che sceglie gli OP da caricare ****
+;**** e carica i dati di ogni singolo OP ****
+;-------------------------------------------------------------------------------
+pro GRBMhandler::loadAll
+close, 6
+openr, 6, ’OP_ordinati.txt’ ; si apre il file che contiene la lista di OP pre
+senti
+op_index = ’’
+while (NOT EOF(6)) do begin
+readf, 6, op_index
+print, ’loading data OP_’, op_index
+;self -> saveopdatadef, op_index **** non si usa ****
+self -> saveopdata, op_index
+endwhile
+close, 6
+self -> datiOP
+end
+;-------------------------------------------------------------------------------
+;**** metodo che carica i dati ****
+ ;**** relativi ad un OP ****
+;-------------------------------------------------------------------------------
+; pro GRBMhandler::loadOP, op_id
+;
+ self -> saveopdata, op_id
+; end
+;-------------------------------------------------------------------------------
+;**** metodo che salva il tempo di trigger ****
+;**** per ogni burst contenuto in tutte le osservazioni ****
+;**** contenute all’interno dell’OP ****
+;-------------------------------------------------------------------------------
+pro GRBMhandler::saveopdata, opindex
+close, 16
+pntrgs = 1b
+openw, 16, ’logburst.txt’
+shell, opindex; **** estrae, fitta, converte e salva ****
+path4 = ’/users/sax/lazza/objects2/objects/op_’+opindex+’/’
+obs = ’’ ; stringa che identifica il n. dell’osservazione
+;trg = ’001’ ; stringa che identifica il n. del burst
+close, 3
+openr, 3, path4+’Observations.txt’
+while (NOT EOF(3)) do begin
+readf, 3, obs
+ ; **** riferimento all’osservazione corrente
+restore, ’TrigNum’+obs+’.dat’; recupera il n. di burst contenuti
+; nell’osservazione
+printf, 16, ’numero di trigs in ’+obs+’ = ’, pntrgs
+count = 0b
+while (count LT pntrgs) do begin
+restore, path4+’TimeResult’+obs+’_’+’.dat’ ; **** legge ****
+self.lista -> saveopdata, opindex, obs, oldtimes[count]
+;self.lista -> saveopdata, opindex, obs, newtime_UTC
+count = count + 1
+endwhile
+printf, 16, ’opindex = ’, opindex
+endwhile
+;spawn, ’rm ’+path4+’*.dat’
+close, 3, 16
+end
+;-------------------------------------------------------------------------------
+;**** metodo per aggiornare l’archivio ****
+;------------------------------------------------------------------------------
+pro GRBMhandler::Aggiorna
+print, ’Aggiornamento archivio ...’
+end
+;-------------------------------------------------------------------------------
+;**** metodo che restituisce ****
+;**** informazioni sulla copertura ****
+;-------------------------------------------------------------------------------
+pro GRBMhandler::coverage
+cover = self.lista -> coverage()
+print
+print, ’copertura in archivio = ’, cover, ’ sec’
+print, ’ore/min/sec = ’, converti(cover)
+print
+end
+;-------------------------------------------------------------------------------
+;
+;-------------------------------------------------------------------------------
+pro GRBMhandler::writelist
+print, ’GRBMhandler : mostro la lista di OP ’
+self.lista -> writelist
+end
+;-------------------------------------------------------------------------------
+;
+;-------------------------------------------------------------------------------
+pro GRBMhandler::writeOP, op_id
+self.lista -> WriteOP, op_id
+end
+;-------------------------------------------------------------------------------
+; metodo che seleziona OP e osservazione
+;-------------------------------------------------------------------------------
+pro GRBMhandler::select, op_id, ob_s
+self.lista -> op_id, ob_s
+end
+;-------------------------------------------------------------------------------
+;
+;-------------------------------------------------------------------------------
+;function GRBMhandler::Analizza
+;b = 0B
+;print, ’accetto richieste di analisi dati’
+;return, b
+;end
+;-------------------------------------------------------------------------------
+; METODO CHE SELEZIONA TUTTE LE OSSERVAZIONI IN ARCHIVIO
+;-------------------------------------------------------------------------------
+senti
+pro GRBMhandler::analyseAll
+close, 6
+openr, 6, ’OP_ordinati.txt’ ; si apre il file che contiene la lista di OP pre
+op_index = ’’
+while (NOT EOF(6)) do begin
+readf, 6, op_index
+print, ’Accesso alle osservazioni nell’’OP ’, op_index
+self -> select, op_index
+self -> analizza
+endwhile
+close, 6
+end
+;-------------------------------------------------------------------------------
+; metodo che attiva lo strumento a regime
+;-------------------------------------------------------------------------------
+pro GRBMhandler::main
+print, ’procedura main’
+self.interface -> Enable; attiva l’interfaccia
+end
+;-------------------------------------------------------------------------------
+; metodo che carica dati relativi all’OP
+; (durata, presenza, accensione strumento, ...)
+;-------------------------------------------------------------------------------
+pro GRBMhandler::datiop
+;-------------------------------------------------------------------------------
+;****** procedura che calcola *****
+;****** le durate degli OP *****
+;-------------------------------------------------------------------------------
+close,close,close,1
+2
+3
+; **** dichiarazione costantioldpos = 0
+gi = 0
+gf = 0
+tempi1 = ulonarr(3)
+str_comp = ’’
+leva = ’’
+mezzanotte = 0b
+off1 = 0ull
+off2 = 0ull
+b = ’ ’
+c = 0
+sup1 = 0ull
+chi = 0
+cmi = 0b
+csi = 0b
+chf = 0
+cmf = 0b
+csf = 0b
+op_loc = ’’
+ecc_loc = ’’
+totsf = 0ull
+totsi = 0ull
+durtotsec = 0ull
+durtotsec2 = 0.0
+cur = 0l
+cur2 = 0l
+tot_loc = 0
+tot_rem = 0
+b = string(b)
+c = long(c)
+totale = 0l
+pos = 0l
+e variabili ****
+; giorno di inizio op
+; giorno di fine op
+; stringa per il confronto
+; supporto per togliere la prima riga
+; flag sul caso a cavallo della mezzanotte
+; offset per il caso a cavallo della mezzanotte
+; offset per il caso maggiore di 24 ore
+; variabile supporto per l’op_id
+; variabile di supporto
+; variabile supporto per le ore (inizio)
+; variabile supporto per i minuti (inizio)
+; variabile supporto per i secondi (inizio)
+; variabile supporto per le ore (fine)
+; variabile supporto per i minuti (fine)
+; variabile supporto per i secondi (fine)
+; variabile supporto per gli op sull’archivio locale
+; gestisce una stringa eccezione nell’archivio locale
+; ora di fine in secondi
+; ora di inizio in secondi
+; variabile supporto per la durata in secondi
+; variabile supporto per la durata in secondi
+; cursore sull’archivio remoto
+; cursore sull’archivio locale
+; tempo copertura grbm in archivio locale
+; tempo di copertura grbm
+; variabile supporto per l’identificativo di op
+;
+; variabile che contiene il totale in secondi di copertura
+; variabile che contiene la posizione del puntatore
+; alla posizione corrente nel file letto
+inf3 = 0 ; informazioni sul file 3
+si = ’si’
+no = ’no’
+
+cond1 = 0b
+cond2 = 0b
+; stringa vera
+; stringa falsa
+; condizione su op da contare
+; condizione su op da contare
+; *********************************
+; *** si definisce una cartella ***
+; *** dell’archivio ***
+; *********************************
+op = create_struct(’tempass’, 0ul, ’op_id’, ’’, ’durh’, 0, ’durm’, 0 , ’durs’, 0,’grbm_
+on’, ’’, ’presente’, ’’, ’copertura’, 0ul, ’duration’, 0ul)
+;lun = 9409
+lun = 50
+archivio = replicate (op, lun)
+; *** numero di op da analizzare in archivio remoto
+; *** definisce la struttura archivio in archivio locale
+
+openr, 1, ’nfilist2.txt’
+openr, 3, ’OP_ordinati.txt’
+openw, 2, ’risultati1.txt’
+; *** si apre il primo file di input: gli op
+; *** si apre il secondo file di input: gli op
+; *** si apre il file di output
+printf, 2, ’tura’
+tempo
+ op-id
+ ore
+ minuti
+ secondi
+ grbm_on
+ presente
+ coper
+readf, 1, $
+format = ’(a1)’, leva
+ ; togli la prima linea
+cur = 0l
+cur2 =0l
+while (cur LE (lun-1)) AND (NOT EOF(1)) do begin ;W1 *** ciclo su gli archivi
+da confrontare
+off1 = 0
+sup1 = 0ull
+durtotsec = 0ull
+durtotsec2 = 0ull
+archivio[cur].durh = 0ull
+chi = 0ull
+cmi = 0ull
+csi = 0ull
+chf = 0ull
+cmf = 0ull
+csf = 0ull
+cond1 = 0b ; *** inizializzato il controllo se il tempo e’ da sommare
+grbm_on = ’’
+inf3 = fstat(3)
+readf, 1, $
+format = ’((a5,T7,I2,T17,I2,T20,I2,T23,I2,T26,I2,T36,I2,T39,I2,T42,I2,T
+49,a1))’, b, gi, chi, cmi, csi, gf, chf, cmf, csf,grbm_on
+oldpos = inf3.cur_ptr
+readf, 3, op_loc ; *** legge sul file di archivio locale
+print, ’leggo la stringa ’, op_loc
+print, ’op in archivio locale ’, op_loc
+print, ’op in archivio remoto ’, b
+inf3 = fstat(3)
+pos = inf3.cur_ptr
+if (ulong(op_loc) NE ulong(b)) then begin
+point_lun, 3, oldpos ; *** resta a leggere sull’op corrente
+archivio[cur].presente = no
+endif else begin
+print, ’OP presente in archivio locale’
+archivio[cur].presente = si
+endelse
+archivio[cur].op_id = b ; *** salva l’identificatore di op
+;print, ’ giorno di inizio ’, gi
+;print, ’ giorno di fine ’, gf
+;*** calcola la durata totale in secondi ***
+if (chf LT chi)OR((gf-gi) NE 0) then begin
+il caso "a cavallo della mezzanotte"
+mezzanotte = 1b
+off1 = 86400 - ((chi*3600) + (cmi*60) + csi)
+; *** gestisce
+if ((gf-gi) GT 1) then begin
+printf, 2, ’op che dura oltre le 24 ore’
+print, ’op che dura oltre le 24 ore’
+off1 = off1 + (((gf - gi) - 1)*86400)
+ ; nel
+caso in cui l’op duri piu’ di un giorno
+endif
+chi = 0
+cmi = 0
+csi = 0
+endif
+ else
+ begin
+off1 = 0
+endelse
+totsf = (chf*3600) + (cmf*60) + csf
+totsi = (chi*3600) + (cmi*60) + csi
+durtotsec = totsf - totsi + off1
+durtotsec2 = durtotsec
+tempi1 = converti(durtotsec) ; **** converti in ore/min/sec
+; **** salva la durata dell’OP ****
+archivio[cur].durh = tempi1[0]
+archivio[cur].durm = tempi1[1]
+archivio[cur].durs = tempi1[2]
+archivio[cur].duration = durtotsec2
+; *** controllo sull’accensione strumento ***
+if (grbm_on EQ ’0’) then begin
+archivio[cur].grbm_on = ’ no’
+endif else begin
+if (grbm_on EQ ’G’) then begin
+archivio[cur].grbm_on = ’ si’
+endif else begin
+archivio[cur].grbm_on = ’ boh’
+endelse
+endelse
+; *** salva il tempo assoluto ***
+if (cur EQ 0) then begin
+archivio[cur].tempass = durtotsec2
+endif else begin
+archivio[cur].tempass = archivio[cur-1].tempass + durtotsec2
+endelse
+)
+; *******************************************************
+; *** controllo sugli op presenti in archivio locale ***
+; *** calcolo della copertura in archivio locale ***
+; *** e di quella mancante ***
+; *******************************************************
+cond1 = ((archivio[cur].presente EQ si)AND(archivio[cur].grbm_on EQ si)
+cond2 = (archivio[cur].presente EQ si)
+if (cond2)then begin
+totale = totale + durtotsec2
+endif
+; *** salva la copertura parziale ***
+archivio[cur].copertura = totale
+; *** stampa l’output su file e su schermo ***
+printf, 2, ’op n. ’, cur + 1
+;print, archivio[cur]
+)
+le)
+printf, 2, archivio[cur]
+;print, ’ tempo parziale copertura osservazione grbm ’, converti(totale
+;printf, 2, ’tempo parziale copertura osservazione grbm’, converti(tota
+self -> transfer, archivio[cur]
+)
+tale)
+cur = cur + 1 ; incrementa il cursore all’indice dell’ archivio remoto
+mezzanotte = 0b
+endwhile ;W1
+print, ’’
+print, ’**********’
+printf, 2, ’’
+printf, 2, ’**********’
+print, ’ tempo totale copertura osservazione grbm ore/min/sec’, converti(totale
+printf, 2, ’ tempo totale copertura osservazione grbm ore/min/sec’, converti(to
+close,close,close,1
+2
+3
+;read,’aspetta’, b
+print, ’arrivederci e grazie’
+end
+;-------------------------------------------------------------------------------
+; trasferisce i dati nei campi del relativo OP ;[]
+;-------------------------------------------------------------------------------
+pro GRBMhandler::transfer, dati
+;print, ’sto trasferendo la durh = ’, dati.durh
+;print, ’per l’’OP ’, dati.op_id
+self.lista -> transfer, dati
+end
+;-------------------------------------------------------------------------------
+; METODO CHE SI SINCRONIZZA SULL’OSSERVAZIONE CORRENTE
+;-------------------------------------------------------------------------------
+function GRBMhandler::retrieve
+close, 8, 9
+coord = STRARR(2)
+tempstring1 = ’’
+tempstring2 = ’’
+openr, 8, ’ActualOP.txt’
+readf, 8, tempstring1
+close, 8
+openr, 9, ’ActualObs.txt’
+readf, 9, tempstring2
+close, 9
+print, ’OP corrente = ’, tempstring1
+print, ’osservazione corrente = ’, tempstring2
+coord[0] = tempstring1
+coord[1] = tempstring2
+return, coord
+end
+;-------------------------------------------------------------------------------
+; legge le curve nel particolare OP
+;-------------------------------------------------------------------------------
+pro GRBMhandler::analizza
+actualobs = STRARR(2)
+print, ’creo le curve totali ’,
+actualobs = self -> retrieve
+self -> creacurve
+self -> leggi, actualobs[0], actualobs[1]
+end
+;-------------------------------------------------------------------------------
+; richiama il programma SDI
+;-------------------------------------------------------------------------------
+pro GRBMhandler::SDI
+print, ’programma SDI lanciato’
+spawn, ’idl SDIStartup’
+self -> leggi
+end
+;-------------------------------------------------------------------------------
+; LEGGI I DATI RELATIVI AD OSSERVAZIONE E OP SELEZIONATI
+;-------------------------------------------------------------------------------
+pro GRBMhandler::leggi
+close, 3
+print, ’acquisisco risultati generati da SDI’
+condizione = ’’
+punteggio = ’’
+openr, 3, ’SDIresult.txt
+readf, 3,
+readf, 3, condizione
+readf, 3, punteggio
+close, 3
+print
+print, ’il trigger selezionato M-h ’, condizione
+print, ’punteggio per il trigger : ’, punteggio
+print
+spawn, ’’
+end
+;-------------------------------------------------------------------------------
+;4.Define the object
+;-------------------------------------------------------------------------------
+pro GRBMhandler__Define
+struct={GRBMhandler,$
+;inherits Strumhandler,$
+interface:OBJ_NEW(),$
+lista:OBJ_NEW() $
+;...
+$
+}
+end

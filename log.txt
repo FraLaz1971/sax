@@ -1,0 +1,310 @@
+voce #GRBM_han.log# non OP: eliminata dall'elenco
+voce 10855.txt non OP: eliminata dall'elenco
+voce AcOP.txt non OP: eliminata dall'elenco
+voce AcTrig.txt non OP: eliminata dall'elenco
+voce Again.tem non OP: eliminata dall'elenco
+voce Burst__Define.pro non OP: eliminata dall'elenco
+voce Burst__Define.pro~ non OP: eliminata dall'elenco
+voce CurrentObs.txt non OP: eliminata dall'elenco
+voce Duration__Define.pro non OP: eliminata dall'elenco
+voce Duration__Define.pro~ non OP: eliminata dall'elenco
+voce GGinterface__Define.pro non OP: eliminata dall'elenco
+voce GRBM non OP: eliminata dall'elenco
+voce GRBMStartup non OP: eliminata dall'elenco
+voce GRBM_han.log non OP: eliminata dall'elenco
+voce GRBM_interface.pro non OP: eliminata dall'elenco
+voce GRBM_interface__Define.pro non OP: eliminata dall'elenco
+voce GRBMcompile non OP: eliminata dall'elenco
+voce GRBMhandGraf.pro non OP: eliminata dall'elenco
+voce GRBMhandGraf__Define.pro non OP: eliminata dall'elenco
+voce GRBMhandler.pro non OP: eliminata dall'elenco
+voce GRBMhandler__Define.pro non OP: eliminata dall'elenco
+voce GRBMhandler__Define.pro~ non OP: eliminata dall'elenco
+voce GRBMstartGraf non OP: eliminata dall'elenco
+voce Ginterface__Define.pro non OP: eliminata dall'elenco
+voce Ginterface__Define.pro~ non OP: eliminata dall'elenco
+voce My_Object__Define.pro non OP: eliminata dall'elenco
+voce OP__Define.pro non OP: eliminata dall'elenco
+voce OP__Define.pro~ non OP: eliminata dall'elenco
+voce OP_control.pro non OP: eliminata dall'elenco
+voce OP_ordinati.txt non OP: eliminata dall'elenco
+voce OP_ordinati.txt~ non OP: eliminata dall'elenco
+voce OPlist__Define.pro non OP: eliminata dall'elenco
+voce OPlist__Define.pro~ non OP: eliminata dall'elenco
+voce OPtoget.txt non OP: eliminata dall'elenco
+voce Observations.txt non OP: eliminata dall'elenco
+voce OutputFile non OP: eliminata dall'elenco
+voce SDIStartup non OP: eliminata dall'elenco
+voce SDI_auto2_2001.pro non OP: eliminata dall'elenco
+voce SDI_auto_2001.pro non OP: eliminata dall'elenco
+voce SDI_auto_2001.pro~ non OP: eliminata dall'elenco
+voce SDI_man_2001.pro non OP: eliminata dall'elenco
+voce SDI_manual.pro non OP: eliminata dall'elenco
+voce SDI_manual.pro~ non OP: eliminata dall'elenco
+voce SDI_plotter_2001.pro non OP: eliminata dall'elenco
+voce SDI_plotter_2001.pro~ non OP: eliminata dall'elenco
+voce SDIman non OP: eliminata dall'elenco
+voce SDImanStartup non OP: eliminata dall'elenco
+voce SDImanStartup~ non OP: eliminata dall'elenco
+voce SDIman~ non OP: eliminata dall'elenco
+voce SDIresult.txt non OP: eliminata dall'elenco
+voce appoggio.txt non OP: eliminata dall'elenco
+voce auto_fot_grbm_tot.exe non OP: eliminata dall'elenco
+voce auto_fot_grbm_tot.f non OP: eliminata dall'elenco
+voce auto_fot_grbm_tot2.exe non OP: eliminata dall'elenco
+voce auto_fot_grbm_tot2.f non OP: eliminata dall'elenco
+voce calGRBMtime non OP: eliminata dall'elenco
+voce converti.pro non OP: eliminata dall'elenco
+voce coper.pro non OP: eliminata dall'elenco
+voce coperta.pro non OP: eliminata dall'elenco
+voce copertura.pro non OP: eliminata dall'elenco
+voce corrotti.txt non OP: eliminata dall'elenco
+voce dati_GRBM.doc non OP: eliminata dall'elenco
+voce direction__Define.pro non OP: eliminata dall'elenco
+voce direction__define.pro non OP: eliminata dall'elenco
+voce disegna.pro non OP: eliminata dall'elenco
+voce dop_11262 non OP: eliminata dall'elenco
+voce dop_11286 non OP: eliminata dall'elenco
+voce dop_4081 non OP: eliminata dall'elenco
+voce dop_6991 non OP: eliminata dall'elenco
+voce esecuzione.txt non OP: eliminata dall'elenco
+voce esecuzione.txt~ non OP: eliminata dall'elenco
+voce files.txt non OP: eliminata dall'elenco
+voce fit_times.txt non OP: eliminata dall'elenco
+voce fot_grbm_tot.exe non OP: eliminata dall'elenco
+voce fot_grbm_tot.f non OP: eliminata dall'elenco
+voce fot_hal_tot.exe non OP: eliminata dall'elenco
+voce gginterface.pro non OP: eliminata dall'elenco
+voce hextodec.pro non OP: eliminata dall'elenco
+voce hp4 non OP: eliminata dall'elenco
+voce idl.ps non OP: eliminata dall'elenco
+voce listato.txt non OP: eliminata dall'elenco
+voce log.txt non OP: eliminata dall'elenco
+voce log2.txt non OP: eliminata dall'elenco
+voce logburst.txt non OP: eliminata dall'elenco
+voce new_iniTimes.txt non OP: eliminata dall'elenco
+voce nfilist.txt non OP: eliminata dall'elenco
+voce nfilist2.txt non OP: eliminata dall'elenco
+voce nfilist2.txt~ non OP: eliminata dall'elenco
+voce nobs.txt non OP: eliminata dall'elenco
+voce pera.pro non OP: eliminata dall'elenco
+voce progra1.pro non OP: eliminata dall'elenco
+voce progra2.pro non OP: eliminata dall'elenco
+voce prova.pro non OP: eliminata dall'elenco
+voce provaccia.pro non OP: eliminata dall'elenco
+voce provaccia.pro~ non OP: eliminata dall'elenco
+voce punteggio__Define.pro non OP: eliminata dall'elenco
+voce punteggio__Define.pro~ non OP: eliminata dall'elenco
+voce raw_grbm_tot.exe non OP: eliminata dall'elenco
+voce raw_grbm_tot2.f non OP: eliminata dall'elenco
+voce risultati.log non OP: eliminata dall'elenco
+voce risultati1.txt non OP: eliminata dall'elenco
+voce risultati_finali.log non OP: eliminata dall'elenco
+voce script1 non OP: eliminata dall'elenco
+voce script1~ non OP: eliminata dall'elenco
+voce scrivi_nobs.pro non OP: eliminata dall'elenco
+voce shell.pro non OP: eliminata dall'elenco
+voce spazzino.pro non OP: eliminata dall'elenco
+voce stampaprova.txt non OP: eliminata dall'elenco
+voce stampaprova.txt~ non OP: eliminata dall'elenco
+voce start non OP: eliminata dall'elenco
+voce temp non OP: eliminata dall'elenco
+voce temp.pro non OP: eliminata dall'elenco
+voce tempo.pro non OP: eliminata dall'elenco
+voce tempo.pro~ non OP: eliminata dall'elenco
+voce tempo3.pro non OP: eliminata dall'elenco
+voce tempo_grafico.pro non OP: eliminata dall'elenco
+voce test_SDIres.pro non OP: eliminata dall'elenco
+voce trigNum.txt non OP: eliminata dall'elenco
+voce trigfiles.txt non OP: eliminata dall'elenco
+voce trigtime.bat non OP: eliminata dall'elenco
+voce trimFOTdir non OP: eliminata dall'elenco
+voce uscita2.txt non OP: eliminata dall'elenco
+voce vaxdir2.txt non OP: eliminata dall'elenco
+voce voci_scartate.txt non OP: eliminata dall'elenco
+voce xprinter.eps non OP: eliminata dall'elenco
+
+n. di OP salvati =       51
+n. di voci scartate =      125
+
+vettore ordinato
+
+    1984
+    3123
+    6221
+    6902
+    7188
+   11303
+   11304
+   11314
+   11315
+   11321
+   11323
+   11324
+   11330
+   11331
+   11332
+   11334
+   11337
+   11339
+   11341
+   11347
+   11348
+   11349
+   11350
+   11356
+   11357
+   11363
+   11365
+   11366
+   11367
+   11368
+   11374
+   11383
+   11385
+   11391
+   11392
+   11398
+   11399
+   11451
+   11452
+   11461
+   11463
+   11465
+   11466
+   11468
+   11471
+   11485
+   11486
+   11487
+   11501
+   11504
+   11518
+
+ho letto : 
+voce  non OP: estrazione non effettuata
+ho letto : Directory $1$DIA10:[GRB]
+voce Directory $1$DIA10:[GRB] non OP: estrazione non effettuata
+ho letto : 
+voce  non OP: estrazione non effettuata
+ho letto : OP_11732.DIR;1	81/108	 8-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11732
+ho letto : OP_11733.DIR;1	82/108	 8-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11733
+ho letto : OP_11734.DIR;1	91/108	 9-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11734
+ho letto : OP_11735.DIR;1	18/20	 9-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11735
+ho letto : OP_11749.DIR;1	104/108	10-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11749
+ho letto : OP_11763.DIR;1	97/108	13-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11763
+ho letto : OP_11764.DIR;1	58/72	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11764
+ho letto : OP_11774.DIR;1	97/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11774
+ho letto : OP_11775.DIR;1	8/8	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11775
+ho letto : OP_11785.DIR;1	92/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11785
+ho letto : OP_11786.DIR;1	91/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11786
+ho letto : OP_11787.DIR;1	85/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11787
+ho letto : OP_11788.DIR;1	19/20	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11788
+ho letto : OP_11797.DIR;1	88/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11797
+ho letto : OP_11798.DIR;1	90/108	21-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11798
+ho letto : OP_11799.DIR;1	22/32	22-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11799
+ho letto : OP_11805.DIR;1	93/108	22-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11805
+ho letto : OP_11806.DIR;1	6/8	22-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11806
+ho letto : OP_11808.DIR;1	8/8	23-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11808
+ho letto : OP_11810.DIR;1	90/108	23-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11810
+ho letto : OP_11811.DIR;1	89/108	23-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11811
+ho letto : OP_11812.DIR;1	34/48	23-AUG-2001     [FOTSYS]   (RWE,RWE,RE,E)
+stringa definitiva : 11812
+ho letto : 
+voce  non OP: estrazione non effettuata
+ho letto : Total of 22 files.
+voce Total of 22 files. non OP: estrazione non effettuata
+
+nel VAX sono presenti       22 OP
+
+
+si parte dall'op     1984
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11732
+   11732 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11733
+   11733 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11734
+   11734 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11735
+   11735 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11749
+   11749 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11763
+   11763 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11764
+   11764 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11774
+   11774 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11775
+   11775 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11785
+   11785 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11786
+   11786 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11787
+   11787 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11788
+   11788 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11797
+   11797 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11798
+   11798 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11799
+   11799 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11805
+   11805 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11806
+   11806 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11808
+   11808 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11810
+   11810 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11811
+   11811 manca e va richiesto
+OP puntato in archivio locale =    11518
+OP puntato in archivio remoto =    11812
+   11812 manca e va richiesto
+
+elaborazione terminata

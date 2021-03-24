@@ -1,0 +1,13 @@
+	;*********************************************
+	;**** comandi per lanciare l'applicazione ****
+	;*********************************************
+
+
+
+.compile tempo.pro
+.compile shell.pro
+.compile Burst__Define.pro
+.compile OP__Define.pro
+.compile OPlist__Define.pro
+.compile GRBMhandler__Define.pro
+.compile Ginterface__Define.pro

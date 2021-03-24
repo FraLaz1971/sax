@@ -1,0 +1,186 @@
+Picco numero:  1
+ 
+Trigger scattato:
+   Schermo   Tinizio      Sigma
+       2      7.93750      12.0000
+       3      7.31250      16.0000
+       4      7.68750      16.0000
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+       2      10.11721
+       3      16.99221
+       4      11.36721
+ 
+Fattore di rebin utilizzato:  10
+ 
+Durata evento:
+Minima:      7.25781
+Media:      7.82813
+Massima:      8.63281
+ 
+Risultati della Cross-Correlazione:
+       3       2     0.396105      -1
+       4       2     0.262523      -1
+       4       3     0.478628       2
+ 
+FWHM=      0.00000      9.01562      6.35938      9.17188
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       2      7.93750      15.7578      7.82032     101      16.2500  *
+       3      7.31250      15.7656      8.45313     146      9.53125  *
+       4      7.68750      15.1797      7.49219      87      10.3906  *
+ 
+Fattore di rebin utilizzato:  39
+ 
+Durata evento:
+Minima:      7.25781
+Media:      7.82813
+Massima:      8.63281
+ 
+Risultati della Cross-Correlazione:
+       3       2     0.616954      -3
+       4       2     0.510291       0
+       4       3     0.780556       1
+ 
+FWHM=      0.00000      8.50000      4.23438      6.67188
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       2      7.93750      15.7578      7.82032     358      9.14063  *
+       3      7.31250      15.7656      8.45313     529      8.83594  *
+       4      7.68750      15.1797      7.49219     294      8.22657  *
+ 
+Picco numero  2:
+ 
+Trigger scattato:
+   Schermo   Tinizio      Sigma
+       3      89.5938      16.0000
+       4      89.6875      6.00000
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+       3      89.71091
+       4      89.99221
+ 
+Fattore di rebin utilizzato:  1
+ 
+Durata evento:
+Minima:    0.0390549
+Media:    0.0468750
+Massima:     0.257812
+ 
+Risultati della Cross-Correlazione:
+       4       3     0.133231     -59
+ 
+FWHM=      0.00000      0.00000   0.00781250     0.273438
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       3      89.5938      89.6406    0.0468750     206      89.6406
+       4      89.6875      90.0078     0.320320      12      89.8828
+ 
+Picco numero  3:
+ 
+Nessuna condizione di trigger
+Picco numero:  1
+ 
+Trigger scattato:
+   Schermo   Tinizio      Sigma
+       2      7.93750      12.0000
+       3      7.31250      16.0000
+       4      7.68750      16.0000
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+       2      10.11721
+       3      16.99221
+       4      11.36721
+ 
+Fattore di rebin utilizzato:  10
+ 
+Durata evento:
+Minima:      7.25781
+Media:      7.82813
+Massima:      8.63281
+ 
+Risultati della Cross-Correlazione:
+       3       2     0.396105      -1
+       4       2     0.262523      -1
+       4       3     0.478628       2
+ 
+FWHM=      0.00000      9.01562      6.35938      9.17188
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       2      7.93750      15.7578      7.82032     101      16.2500  *
+       3      7.31250      15.7656      8.45313     146      9.53125  *
+       4      7.68750      15.1797      7.49219      87      10.3906  *
+ 
+Fattore di rebin utilizzato:  39
+ 
+Durata evento:
+Minima:      7.25781
+Media:      7.82813
+Massima:      8.63281
+ 
+Risultati della Cross-Correlazione:
+       3       2     0.616954      -3
+       4       2     0.510291       0
+       4       3     0.780556       1
+ 
+FWHM=      0.00000      8.50000      4.23438      6.67188
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       2      7.93750      15.7578      7.82032     358      9.14063  *
+       3      7.31250      15.7656      8.45313     529      8.83594  *
+       4      7.68750      15.1797      7.49219     294      8.22657  *
+ 
+Picco numero  2:
+ 
+Trigger scattato:
+   Schermo   Tinizio      Sigma
+       3      89.5938      16.0000
+       4      89.6875      6.00000
+ 
+Il picco termina nei seguenti schermi nel seguente istante
+       3      89.71091
+       4      89.99221
+ 
+Fattore di rebin utilizzato:  1
+ 
+Durata evento:
+Minima:    0.0390549
+Media:    0.0468750
+Massima:     0.257812
+ 
+Risultati della Cross-Correlazione:
+       4       3     0.133231     -59
+ 
+FWHM=      0.00000      0.00000   0.00781250     0.273438
+ 
+Punteggi ai vari schermi:
+ 
+Segnale sui seguenti schermi:
+ 
+   Schermo   inizio       fine         durata       massimo      tmassimo
+       3      89.5938      89.6406    0.0468750     206      89.6406
+       4      89.6875      90.0078     0.320320      12      89.8828
+ 
+Picco numero  3:
+ 
+Nessuna condizione di trigger

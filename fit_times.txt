@@ -1,0 +1,4 @@
+**** valori dei tempi approssimati ****
+
+A =   3.00017e+08  ****  B =       1.03791
+

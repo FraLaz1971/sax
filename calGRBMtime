@@ -1,0 +1,426 @@
+#!/usr/local/bin/perl
+#
+#  calcGRBtime
+#
+#  Syntax:
+#    calcGRBtime [-h] p1grb001_file_name
+#
+#      -h Help -- just display this message and quit
+#
+#  Description
+#    Read a GRB001 file for the trigger detection time and compute its
+#    conversion to UTC time if there is the obt_utc conversion file
+#
+# Author:               Mauro Orlandini <orlandini@tesre.bo.cnr.it>
+# Revision:             $Revision: 1.8 $
+# Last Changed by:      $Author: mauro $
+# Last Changed on:      $Date: 1996/12/18 11:59:28 $
+#
+
+# Initializations
+$rev = '$Revision: 1.8 $';   $rev =~ s/\$//g;
+$author = '$Author: mauro $';   $author =~ s/\$//g;
+$upd_date = '$Date: 1996/12/18 11:59:28 $';  $upd_date =~ s/\$//g;
+# Aux record lengths
+$recl_obt = 44;
+$recl_pd = 132;
+$recl_ex = 80;
+
+# Get the command-line options
+require "getopts.pl";
+&Getopts('h');
+if ($@ || $opt_h) { &usage; }
+
+# First we ask for the GRB file
+unless ($ARGV[0]) {
+  print "  GRB file name : ";
+  chop($GRBfile = <STDIN>);
+} else {
+  $GRBfile = $ARGV[0];
+}
+
+# Open the file and check if it is a FOT or BTB file
+open(GRBM, "$GRBfile") || die "I cannot open GRB file $GRBfile: $!\n";
+read(GRBM, $record, 2) || die "I cannot read GRB file $GRBfile: $!\n";
+
+# These are the first 2 bytes
+$apid = unpack("n2", $record);
+
+if ($apid == 35665) { # 35665 = 8b51 -> BTB file
+  $recl = 1108;   @swap = (2,3,0,1);
+  $TEMP = "x6 ";   $type = "BTB";
+} elsif ($apid == 256) { # 256 = 0100 -> FOT file
+  # this is a FOT file
+  $recl = 1028;   @swap = (3,2,1,0);
+  $TEMP = "x4 ";   $type = "FOT";
+  # From the input name we decide if we are using XAS or TSPZ naming
+  if ($GRBfile =~ /npd0(\d+)\.p1grb001/) {
+    $OBSn = "$1";
+    $recl_pd += 1;   $recl_obt += 1;   $recl_ex += 1;
+  } elsif ($GRBfile =~ /p1grb001_\d+_(\d+)_n.dat/) {
+    $OBSn = "$1";   $dataTSPZ = 1;
+  } else {
+    die "I did not recognize the FOT $GRBfile.\n";
+  }
+} else {
+  die "I did not recognize $GRBfile as a FOT or BTB GRB file.\n";
+}
+
+# This the the template for reading start time
+$TEMP .= "CCCC";
+
+# Template for obt_utc conversion file
+$TEMPOBT = "A2 x A11 x2 A4 x A2 x A2 x A2 x A2 x A2 x A5";
+
+# Template for pd.instdir
+$TEMPPD = "x27 A10 x23 A10 x2 A x2 A2";
+
+# Reposition at the beginning of file
+seek(GRBM, 0, 0);
+
+$nBurst = 0;
+if ($type eq "FOT") {
+  while (read(GRBM, $record, $recl)) {
+    $nrec++;
+    next unless ($nrec-1)%4 == 1;
+    @trg_time = unpack($TEMP, $record);
+
+    # Byte swap
+    @trg_time[0,1,2,3] = @trg_time[@swap];
+
+    # Trigger time in decimal number
+    $obt_time_event_dec0[$nBurst] =
+    $trg_time[3] + 256*($trg_time[2] + 256*($trg_time[1] + 256*$trg_time[0]));
+    $nBurst++;
+  }
+} else {
+  while (read(GRBM, $record, $recl)) {
+    $nrec++;
+    next unless $nrec%2 == 1;
+    @trg_time = unpack($TEMP, $record);
+
+    # Byte swap
+    @trg_time[0,1,2,3] = @trg_time[@swap];
+
+    # Trigger time in decimal number
+    $obt_time_event_dec0[$nBurst] =
+    $trg_time[3] + 256*($trg_time[2] + 256*($trg_time[1] + 256*$trg_time[0]));
+    $nBurst++;
+  }
+}
+close(GRBM);
+
+# Compute number of bursts in file
+# Check if there are missing records in BTB files
+if ($type eq "BTB") {
+  if ($nrec%2 == 1) {
+    print "Warning: a GRB001 subset is missing!\n";
+    $nrec++;
+  }
+  $bursts = $nrec/2;
+} else {
+  $bursts = $nrec/4;
+}
+if ($bursts == 1) {
+  $last_s = "";
+} else {
+  $last_s = "s";
+}
+print "$type file $GRBfile contains $bursts burst$last_s\n";
+
+# Before going on we try to found the required file names, different
+# according to the naming convention
+
+if ($type eq "BTB") {
+  open(FILES, "find . -name obt_utc_*.dat -print|") || die
+    "Cannot list the current directory: $!\n";
+  chop($obt_utc = <FILES>);
+  close(FILES);
+
+} else {
+
+  if ($dataTSPZ) {
+    open(FILES, "find . -name obt_utc_* -print|") || die 
+      "Cannot list the current directory: $!\n";
+    chop($obt_utc = <FILES>);
+    close(FILES);
+    open(FILES, "find . -name pdinstdirtape_* -print|");
+    chop($pd_inst = <FILES>);
+    close(FILES);
+  } else {
+    $obt_utc = "saxfot.obt_utc";
+    $pd_inst = "pd.instdir";
+  }
+}
+
+$firstwarn = $secondwarn = 1;
+for ($j=0; $j<=$#obt_time_event_dec0; $j++) {
+  # Print the trigger detection time
+  if ($#obt_time_event_dec0) {
+    printf "GRB trigger detection time for burst %1d is %8.8x ",
+      $j+1, $obt_time_event_dec0[$j];
+  } else {
+    printf "GRB trigger detection time is %8.8x ",
+      $obt_time_event_dec0[$j];
+  }
+
+  # ...and in seconds
+  printf " (%8.3f sec)\n", $obt_time_event_dec0[$j] / 65536;
+
+  # This part is for the obt_utc conversion
+  # The case for BTB file is very easy
+  if ($type eq "BTB") {
+    unless (-e "$obt_utc") {
+      if ($firstwarn) {
+	warn "For OBT-UTC conversions I need the file $obt_utc\n",
+	     "and it does not exist in this directory.\n";
+	$firstwarn = 0;
+      }
+      next;
+    }
+    # Open the obt_utc conversion file
+    open(CONV, "$obt_utc");
+    while ($record = <CONV>) {
+      ($byt, $hextime, $yyyy, $mo, $dd, $hh, $mm, $ss, $ds) = 
+					  unpack($TEMPOBT, $record);
+    }
+    close(CONV);
+    $hextime =~ s/ //g;
+    $delta_sec = (hex($hextime) - $obt_time_event_dec0[$j]) / 65536;
+    $utc = &jday($mo, $dd, $yyyy);
+    $frc = ($hh*3600 + $mm*60 + $ss + $ds/100000) / 86400;
+    $utc += $frc;
+    $day_event = $delta_sec / 86400;
+    $utc_event = $utc - $day_event;
+    $jd_event = int($utc_event);
+    $time_event = $utc_event - $jd_event;
+    ($month, $day, $year, $dow) = &jdate($jd_event);
+    ($hh, $mm, $ss, $ds) = &hms($time_event);
+    printf "corresponding to %3s, %2d %3s %4d %2.2d:%2.2d:%2.2d:%5.5d\n",
+       &weekday($dow), $day, &monthname($month,3), $year, $hh, $mm, $ss, $ds;
+    next;
+  }
+
+  # For OBT-UTC conversions I need two files saxfot.obt_utc, pd.instdir
+  unless (-e "$obt_utc" && -e "$pd_inst") {
+    if ($firstwarn) {
+      warn "For OBT-UTC conversions I need the files $obt_utc\n",
+	   "and $pd_inst and both are not present in this directory.\n";
+      $firstwarn = 0;
+    }
+    next;
+  }
+
+  # I will find the MSB of the saxfot.obt_utc from the pd.instdir 
+  open(PDINST, "$pd_inst");
+  while (read(PDINST, $record, $recl_pd)) {
+    ($StartHex, $EndHex, $slew, $obs) = unpack($TEMPPD, $record);
+    next if $slew ne "N";
+    next if $obs ne $OBSn;
+    $msb1 = substr($StartHex,0,2);
+    $msb2 = substr($EndHex,0,2);
+    if ($msb1 eq $msb2) {
+      $msbyte = $msb1;
+    } else {
+      $StartDec = hex(substr($StartHex,2,8));
+      if ($obt_time_event_dec0[$j] < $StartDec) {
+	$msbyte = $msb2;
+      } else {
+	$msbyte = $msb1;
+      }
+    }
+    last;
+  }
+  close(PDINST);
+
+  $obt_time_event_dec = $obt_time_event_dec0[$j] + hex($msbyte)*256**4;
+
+  # Check for problems with big numbers...
+  if ($obt_time_event_dec == $obt_time_event_dec0[$j]) {
+    if ($secondwarn) {
+      warn "Perl under $ENV{OSTYPE} seems to have problems with big numbers,\n",
+  	   "so the OBT-UTC conversion does not work. Sorry!\n";
+      $secondwarn = 0;
+    }
+    next;
+  }
+
+  # Open the obt_utc conversion file
+  open(CONV, "$obt_utc");
+  while (read(CONV, $record, $recl_obt)) {
+    ($byt, $hextime, $yyyy, $mo, $dd, $hh, $mm, $ss, $ds) = 
+					  unpack($TEMPOBT, $record);
+    $hextime =~ s/ //g;
+    $bigpart = hex($byt)*256**4;
+    $obt_time = hex($hextime) + $bigpart;
+    next if $obt_time < $obt_time_event_dec;
+    $delta_sec = ($obt_time - $obt_time_event_dec) / 65536;
+    $utc = &jday($mo, $dd, $yyyy);
+    $frc = ($hh*3600 + $mm*60 + $ss + $ds/100000) / 86400;
+    $utc += $frc;
+    $day_event = $delta_sec / 86400;
+    $utc_event = $utc - $day_event;
+    $jd_event = int($utc_event);
+    $time_event = $utc_event - $jd_event;
+    ($month, $day, $year, $dow) = &jdate($jd_event);
+    ($hh, $mm, $ss, $ds) = &hms($time_event);
+    printf "corresponding to %3s, %2d %3s %4d %2.2d:%2.2d:%2.2d:%5.5d\n",
+       &weekday($dow), $day, &monthname($month,3), $year, $hh, $mm, $ss, $ds;
+    last;
+  }
+  close(CONV);
+}
+
+# Lets see if we have the EXCONF file for reading the GRBMSTEP keyword
+if ($dataTSPZ) {
+  if ($GRBfile =~ /^p1grb001/) { $EXCfile = "pdexconf".$'; }
+} else {
+  if ($GRBfile =~ /p\dgrb001/) { $EXCfile = $`."pdexconf"; }
+}
+if (-e $EXCfile) {
+  open(EXC, "$EXCfile") || die "Cannot open EXPCONF file $EXCfile: $!\n";
+  while (read(EXC, $record, $recl_ex)) {
+    if ($record =~ /GRBML1LO|GRBML1HI|GRBMSTEP|GRBMLONG|GRBMSHRT/) {
+      ($value, $descr) = unpack("x9 A27 x A42", $record);
+      $value =~ s/^\s+//;   $descr =~ s/^\s+//;
+      $value /= 1000 if $record =~ /GRBMSHRT/;
+      if ($record =~ /GRBML1/) {
+	if ($record =~ /GRBML1LO/) {
+	  $kev = (14 * $value) / 3 + 20;
+	} else {
+	  $kev = (400 * $value) / 7 + 200;
+	}
+	printf "The %s is %s (%5.1f keV)\n", $descr, $value, $kev;
+      } else {
+        print "The $descr is $value sec\n";
+      }
+    }
+  }
+  close(EXC);
+}
+
+############################ SUBROUTINES ################################
+
+sub hms {
+  #
+  # Convert a fraction of day in an array with hh, mm, ss, ds
+  #   with ds in decimal seconds
+
+  local($frc) = @_;
+  local($sec, $h, $m, $mf, $s, $d);
+
+  $sec = $frc * 86400;
+  $d = $sec - int($sec);
+  $d *= 100000;
+  $h = int($frc * 24);
+  $mf = ($frc * 24 - $h)*60;
+  $m = int($mf);
+  $s = int(($mf - $m)*60);
+
+  ($h, $m, $s, $d);
+}
+
+#########################################################################
+#
+#  Taken from date.pl
+#
+#########################################################################
+
+sub jdate
+# Usage:  ($month,$day,$year,$weekday) = &jdate($julian_day)
+{
+	local($jd) = @_;
+	local($jdate_tmp);
+	local($m,$d,$y,$wkday);
+	local($brit_jd) = 2361222;
+
+	warn("warning:  pre-dates British use of Gregorian calendar\n")
+		if ($jd < $brit_jd);
+
+	$wkday = ($jd + 1) % 7;       # calculate weekday (0=Sun,6=Sat)
+	$jdate_tmp = $jd - 1721119;
+	$y = int((4 * $jdate_tmp - 1)/146097);
+	$jdate_tmp = 4 * $jdate_tmp - 1 - 146097 * $y;
+	$d = int($jdate_tmp/4);
+	$jdate_tmp = int((4 * $d + 3)/1461);
+	$d = 4 * $d + 3 - 1461 * $jdate_tmp;
+	$d = int(($d + 4)/4);
+	$m = int((5 * $d - 3)/153);
+	$d = 5 * $d - 3 - 153 * $m;
+	$d = int(($d + 5) / 5);
+	$y = 100 * $y + $jdate_tmp;
+	if($m < 10) {
+		$m += 3;
+	} else {
+		$m -= 9;
+		++$y;
+	}
+	($m, $d, $y, $wkday);
+}
+
+
+sub jday
+# Usage:  $julian_day = &jday($month,$day,$year)
+{
+	local($m,$d,$y) = @_;
+	local($ya,$c);
+	local($brit_jd) = 2361222;
+
+	$y = (localtime(time))[5] + 1900  if ($y eq '');
+
+	if ($m > 2) {
+		$m -= 3;
+	} else {
+		$m += 9;
+		--$y;
+	}
+	$c = int($y/100);
+	$ya = $y - (100 * $c);
+	$jd =  int((146097 * $c) / 4) +
+		   int((1461 * $ya) / 4) +
+		   int((153 * $m + 2) / 5) +
+		   $d + 1721119;
+	warn("warning:  pre-dates British use of Gregorian calendar\n")
+		if ($jd < $brit_jd);
+	$jd;
+}
+
+sub monthname
+# Usage:  $month_name = &monthname($month_no)
+{
+	local($n,$m) = @_;
+	local(@names) = ('January','February','March','April','May','June',
+	                 'July','August','September','October',
+			 'November','December');
+	if ($m ne '') {
+		substr($names[$n-1],0,$m);
+	} else {
+		$names[$n-1];
+	}
+}
+
+sub weekday
+# Usage:  $weekday_name = &weekday($weekday_number)
+{
+	local($wd) = @_;
+	("Sun","Mon","Tue","Wed","Thu","Fri","Sat")[$wd];
+}
+
+sub usage {
+  die <<"EndUsage";
+
+usage: calcGRBtime [-h] p1grb001_file_name
+
+      -h Help -- just display this message and quit
+      p1grb001_file_name -- it can be a telemetry file or a FOT file
+			    (in both XAS or TSPZ naming)
+
+Read a GRB001 file for the trigger detection time and compute its
+conversion to UTC time if there is the obt_utc conversion file
+
+Author         : Mauro Orlandini <orlandini\@tesre.bo.cnr.it>
+Revision       : $rev
+Last Changed by: $author
+Last Changed on: $upd_date
+EndUsage
+}

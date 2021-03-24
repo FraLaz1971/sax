@@ -1,0 +1,14 @@
+	;*********************************************
+	;**** comandi per lanciare l'applicazione ****
+	;*********************************************
+
+; **** analizza le curve di luce ****
+
+.compile SDI_auto_2001.pro
+.run SDI_auto_2001.pro
+
+;.compile SDI_auto2_2001.pro
+;.run SDI_auto2_2001.pro
+
+.continue
+exit

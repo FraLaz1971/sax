@@ -1,0 +1,142 @@
+#!/usr/bin/env perl
+#
+#  trimFOTdir
+#
+#  Description:
+#   Adjust file names in current directory to naming convention
+#     used by XAS (DAWG-REP.3.0/94)
+#   Create a script named GoBack to move the files at the old names
+#   Add a LF in ASCII file records and make a backup copy of the
+#     original file if $DoBak is set to 1
+#
+# Author:               Mauro Orlandini <orlandini@tesre.bo.cnr.it>
+# Revision:             $Revision: 0.6 $
+# Last Changed by:      $Author: mauro $
+# Last Changed on:      $Date: 96/08/08 11:45:18 $
+#
+
+# This program creates a backup copy of the ASCII file that will be LF
+# added before making the processing (made on a temporary file).
+# If you do not like this, set $DoBak to 0
+$DoBak = 0;
+
+# Initialization of the hash table for AddLF routine
+%RecL = ( "attitude", 84,
+	  "ephemeris", 100,
+          "obt", 44,
+          "tapedirtape", 132,
+          "leinstdirtape", 132, "meinstdirtape", 132, 
+	  "hpinstdirtape", 132, "pdinstdirtape", 132,
+          "obsdir", 40,
+          "leexconf", 80, "meexconf", 80, "hpexconf", 80, "pdexconf", 80);
+
+# Miscellanea
+chop($Date = `date`);
+$rev = '$Revision: 0.6 $';   $rev =~ s/\$//g;
+
+# Print banner
+print "\n  This is trimFOTdir $rev\n\n";
+
+# Find the files to be converted
+open(FILES, "ls|grep .dat |") || die "There are not .dat files: $!\n";
+@files = <FILES>;
+close(FILES);
+
+# Create script file to undo the rename
+open(GB, ">GoBack") || die "Cannot create script GoBack: $!\n";
+print GB "\#\n\# Script created by trimFOTdir $rev\n\# on $Date\n\#\n";
+
+foreach $file (@files) {
+  $nfiles++;
+  chop($file);
+  if ($file =~ /(\;)/) {
+    # Chop VAX file extension, if present
+    rename("$file", "$`") || warn 
+     "File $file contains extension number and I was not able to drop it: $!\n";
+    $file = $`;
+  }
+  print "  Processing file $file...";
+  ($packet, $op_nr, $nobs, $obstype) = split(/_/, $file,4);
+
+  # Special files
+  if ($packet =~ /attitude|ephemeris|instdir|ithkd000|obt|tapedir|tchkd000/) {
+    $newname = "saxfot.$packet";
+    $newname .= "_utc" if $packet eq "obt";
+    $newname = substr($newname, 0, length($newname)-4) 
+       if $packet eq "tapedirtape";
+    $newname = substr($packet,0,2) . ".instdir" if $packet =~ /instdir/;
+    rename("$file", "$newname") ? print GB "mv $newname $file\n" :
+            warn "Cannot rename $file -> $newname: $!\n";
+    # Add a LF for each record for these special files
+    &AddLF($newname) if $packet =~ /attitude|ephemeris|instdir|obt|tapedir/;
+    print "...done!\n";
+    next;
+  }
+
+  ($obs, $rest) = split(/\./, $obstype);
+  $nobs = "0$nobs" if $nobs < 100;
+
+  INST: {
+    if ($packet =~ /^h/) {
+      $inst = "hp", last INST;
+    } elsif ($packet =~ /^l/) {
+      $inst = "le", last INST;
+    } elsif ($packet =~ /^m/) {
+      $inst = "me", last INST;
+    } elsif ($packet =~ /^p/) {
+      $inst = "pd";
+    }
+  }
+
+  $packet = "obsdir" if $packet =~ /obsdir/;
+
+  $newname = "$obs$inst$nobs.$packet";
+  rename("$file", "$newname") ? print GB "mv $newname $file\n" :
+          warn "Cannot rename $file -> $newname: $!\n";
+  # Add a LF for each record for these special files
+  &AddLF($newname) if $packet =~ /obsdir|exconf/;
+  print "...done!\n";
+}
+
+print "\n  Processed $nfiles files.\n";
+
+close(GB);
+chmod(0755, "GoBack");
+
+sub AddLF {
+  # Add a LF at the end of each record for the following packet types
+  #    attitude ephemeris obt_utc tapedir instdir obsdir exconf
+  #
+  # Parameter:		INfile		input file
+  #
+  # Other parameters are passed as global variables, and they are
+  #    $DoBak		Flag whether or not create .bak files
+  #    $RecL		Record length of $packet type
+  #    $packet		Packet type
+  #    $file		Original FOT file name
+  #
+
+  local($INfile) = @_;   local($OUTfile) = "AddLF.$$";   local($record);
+
+  open(IN, "$INfile") || die "Cannot open file $INfile for AddLF: $!\n";
+  open(TMP, ">$OUTfile") || die "Cannot open TMP file for AddLF: $!\n";
+
+  while (read(IN, $record, $RecL{$packet})) {
+    print TMP "$record\n";
+  }
+
+  close(IN);
+  close(TMP);
+
+  if ($DoBak) {
+    rename("$INfile", "$INfile.bak") || warn
+       "AddLF: Cannot move $INfile in $INfile.bak: $!\n";
+    rename("$OUTfile", "$INfile") || warn 
+       "AddLF: Cannot move $OUTfile in $INfile: $!\n";
+    # For the GoBack script
+    print GB "mv $INfile.bak $file\n";
+  } else {
+    rename("$OUTfile", "$INfile") || warn
+    "AddLF: Cannot move $OUTfile in $INfile: $!\n";
+  }
+}

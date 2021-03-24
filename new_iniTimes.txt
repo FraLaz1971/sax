@@ -1,0 +1,4 @@
+
+vecchio istante di inizio = 00:00:00:00009
+
+nuovo istante di inizio = 01:16:17:89160

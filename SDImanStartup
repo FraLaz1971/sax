@@ -1,0 +1,14 @@
+ 	;*********************************************
+	;**** comandi per lanciare l'applicazione ****
+	;*********************************************
+
+; **** analizza le curve di luce ****
+
+.compile SDI_manual.pro
+.run SDI_manual.pro
+
+;.compile SDI_plotter_2001.pro
+;.run SDI_plotter_2001.pro
+
+.continue
+exit

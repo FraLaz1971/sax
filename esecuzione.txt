@@ -1,0 +1,781 @@
+Supponiamo di mandare in esecuzione il programma quando nella directory root
+sono presenti, fra gli altri file, le seguenti directory OP
+
+
+file1
+file2
+... 
+...
+op_6181
+op_6991
+op_6992
+...
+
+...
+filen
+
+Questo contenuto della directory root e' un campione di 3 OP scelti appositamente per testare 
+le prestazioni dell'applicazione.
+
+Da un catalogo di eventi noti risulta che la sorgente denominata SGR 1900+14 ha emesso in data 10-01-99
+e che la sorgente denominata SGR 1806-20 ha emesso in data 01-06-99.
+
+Possiamo osservare dal file nfilist.txt contenente le informazioni relative alle misure degli 
+strumenti a campo ristretto (NFI) di SAX che tali date devono ricadere all'interno degli 
+Observing Period 6181 e 6991 infatti :
+
+
+ 6181|09-JAN-99 23:58:52|11-JAN-99 03:45:32|MLHPG | P | 186.28|	 12.70|NGC 4388|
+ 6182|11-JAN-99 03:45:32|12-JAN-99 07:32:12|MLHPG | P | 186.28|	 12.70|NGC 4388|
+ 6183|12-JAN-99 07:32:12|13-JAN-99 11:18:52|MLHPG | P | 186.29|	 12.70|NGC 4388|
+
+...	...	...	...	...	...	...	...	...	...	
+...	...	...	...	...	...	...	...	...	...	
+
+ 6989|30-MAY-99 17:33:57|30-MAY-99 17:52:15|MLHPG | L | ---.--| ---.--|nfi slew|
+ 6990|30-MAY-99 17:52:15|31-MAY-99 21:38:55|MLHPG | P | 332.09| -47.13|NGC 7213|
+ 6991|31-MAY-99 21:38:55| 2-JUN-99 01:25:35|MLHPG | P | 332.08| -47.13|NGC 7213|
+
+
+per l'esattezza risulta che le misure della SGR 1900+14 devono essere contenute nell'OP 6181 (periodo
+di osservazione che va dal 9 gennaio 1999 all'11 gennaio 1999) e che le misure della SGR 1806-20 devono 
+essere contenute nell'OP 6991 (periodo di osservazione che va dal 31 maggio 1999 al 2 giugno 1999)
+
+L'OP 6992 invece e' una directory OP fittizia creata appositamente per testare il programma su piccole 
+quantita' di dati: contiene un'unica osservazione con 3 trigger, per essa non vengono rilevate 
+informazioni sugli strumenti.
+ 
+Il programma effettua tutte le computazioni necessarie a rilevare le osservazioni
+contenenti i trigger e si porta in una condizione di stand-by, attendendo che l'utente
+selezioni le azioni da intraprendere.
+L'interfaccia prevede le seguenti opzioni :
+
+***********************************
+**** programma per la gestione ****
+****      archivio GRBM        ****
+***********************************
+
+
+selezionare la funzione
+e premere invio
+
+0 = termina l'elaborazione
+
+1 = aggiorna l'archivio
+
+2 = mostra i dati
+
+3 = mostra la copertura
+
+4 = mostra la lista
+
+5 = crea le curve
+
+6 = analizza le curve
+
+7 = comprimi i dati
+
+8 = analizza archivio
+
+
+se ovviamente selezioniamo l'opzione 4 otteniamo la lista degli OP rilevati :
+
+GRBMhandler : mostro la lista di OP 
+
+op_6181
+op_6991
+op_6992
+
+supponiamo poi di richiedere l'opzione 2 e visualizzare le informazioni raccolte
+
+data analysing
+
+OP scelto ?
+: 6181
+
+hai scelto l'OP 6181
+
+indice nella lista = 0
+
+informazioni relative all'OP
+op_id = 6181
+durata (ore)   27
+durata (minuti)  46
+durata (secondi)  40
+durata in secondi      100000
+grbm_on        si
+
+
+
+vuoi le informazioni relative ai burst ? (y/n)
+
+
+si viene informati innanzitutto che l'OP da noi selezionato occupa l'indice 0 nella lista
+(partendo da indice = 0)
+dopodiche'  si possono leggere le informazioni relative alla durata complessiva delle misurazioni 
+in esso contenute (prima approssimazione).
+In questo caso risulta che l'Observing Period 6181 ha una durata complessiva 
+di 27 ore 46 minuti e 40 secondi per un totale di (27 x 3600) = 97200 +
+						    (46 x 60) =  2760 + 
+						     (40 x 1)	   40 =
+								------- 
+							       100000   secondi.
+
+Risulta inoltre che il GRBM era acceso durante il periodo prescelto (grbm_on        si)
+
+Allo stesso modo possiamo richiedere la stessa operazione per l'OP 6991 ed ottenere:
+
+data analysing
+
+OP scelto ?
+: 6991
+
+hai scelto l'OP 6991
+
+indice nella lista =        1
+
+informazioni relative all'OP
+op_id = 6991
+durata (ore)    3
+durata (minuti)  46
+durata (secondi)  40
+durata in secondi       13600
+grbm_on        si
+
+vuoi le informazioni relative ai burst ? (y/n)
+
+per l'OP fittizio 6992 otteniamo
+
+data analysing
+
+OP scelto ?
+: 6992
+
+hai scelto l'OP 6992
+
+indice nella lista =        2
+
+informazioni relative all'OP
+op_id = 6992
+durata (ore)    0
+durata (minuti)   0
+durata (secondi)   0
+durata in secondi           0
+grbm_on no
+
+presenti trigger (   3) nell'osservazione 025
+observations[   0] = 025
+
+vuoi le informazioni relative ai burst ? (y/n)
+
+
+Possiamo a questo punto selezionare l'opzione 3 dal menu' principale e visualizzare le informazioni
+relative alla copertura totale dell'archivio, che nel nostro test possediamo per le 2 directory OP
+6181 e 6991. Otteniamo la seguente schermata
+
+copertura in archivio =       113600 sec
+
+ore/min/sec =           31          33          20
+
+
+La successiva opzione fornisce all'utente la possibilita' di accedere alle informazioni
+contenuta nelle curve di luce ad alta risoluzione relative ai trigger eventualmente rivelati
+durante la durata dell'OP 6181.
+Occorre prima pero' lanciare la funzione di analisi su tutto l'archivio che consentira' di caricare
+in memoria le informazioni estratte dal programma (SDI) di analisi delle curve di luce, per ogni 
+singolo trigger contenuto in ogni singola osservazione di tutti gli OP presenti in archivio. 
+Per mostrare come la funzione di analisi su tutto l'archivio viene svolta, mostriamo il contenuto delle
+3 directory OP del campione relativo al nostro test.
+Ecco i log che genera il programma in esecuzione durante la fase preliminare, per il caricamento dati.
+
+
+
+OP 6181
+
+observations[0]  = 006	presenti (2) trigger  nell'osservazione 006
+
+observations[1]  = 009	presenti (1) trigger  nell'osservazione 009
+
+observations[2]  = 015	presenti (1) trigger  nell'osservazione 015
+
+observations[3]  = 018	presenti (2) trigger  nell'osservazione 018
+
+observations[4]  = 024	presenti (1) trigger  nell'osservazione 024
+
+observations[5]  = 027	presenti (1) trigger  nell'osservazione 027
+
+observations[6]  = 028	presenti (1) trigger  nell'osservazione 028
+
+observations[7]  = 033	presenti (1) trigger  nell'osservazione 033
+
+observations[8]  = 036	presenti (2) trigger  nell'osservazione 036
+
+ 
+
+
+
+OP 6991
+
+observations[0]  = 010   presenti trigger (1) nell'osservazione 010
+
+observations[1]  = 013   presenti trigger (1) nell'osservazione 013
+
+observations[2]  = 016   presenti trigger (2) nell'osservazione 016
+
+observations[3]  = 022   presenti trigger (2) nell'osservazione 022
+
+observations[4]  = 025   presenti trigger (3) nell'osservazione 025
+
+observations[5]  = 028   presenti trigger (1) nell'osservazione 028
+
+observations[6]  = 031   presenti trigger (1) nell'osservazione 031
+
+observations[7]  = 037   presenti trigger (1) nell'osservazione 037
+
+observations[8]  = 040   presenti trigger (1) nell'osservazione 040
+ 
+observations[9]  = 043   presenti trigger (1) nell'osservazione 043
+
+observations[10] = 046   presenti trigger (1) nell'osservazione 046
+
+observations[11] = 049   presenti trigger (1) nell'osservazione 049
+
+
+
+OP 6992
+
+observations[0]  = 025   presenti trigger (3) nell'osservazione 025
+
+
+Si nota che abbiamo rilevato 10 osservazioni nell'Observing Period 6181, 
+12 osservazioni nell'Observing Period 6992 e 1 osservazione nell'Observing Period 6992.
+Per ogni osservazione sono stati contati i singoli trigger contenuti in ognuna di esse 
+ed estratto il relativo istante di trigger.
+Mandare in esecuzione la funzione di analisi su tutto l'archivio nella nostra esecuzione test, 
+significa creare le curve di luce ad alta risoluzione totali per tutti i trigger elencati sopra.
+Selezioniamo l'opzione  di analisi su tutto l'archivio e possiamo seguire che il programma
+scorre la lista degli OP, per ogni OP puntato scorre tutte le osservazioni e per ognuna di esse
+lancia il programma fot_grbm_tot.exe che ne crea le curve totali.
+
+Si tenga presente che la struttura della base di dati creata da GRBMhandler, e' costituita da
+una lista di OP ognuno dei quali contiene una lista di oggetti burst (per ognuno dei quali se ne
+puo' conoscere il numero dell'osservazione da cui e' estratto e l'indice di trigger all'interno
+dell'osservazione [indice = 1 se e' il primo trigger; indice = 2 se e' il secondo trigger ... ]).
+I burst di ogni OP vengono puntati dalla variabile denominata burst_point che 
+
+
+
+Ecco degli stralci dai log visualizzati su schermo:
+
+
+...	...	...	
+...	...	...
+
+...	...	...
+...	...	...
+
+
+OP corrente = 6181
+
+osservazione corrente = 024
+
+decomprime dati nell'OP 6181 osservazione 024
+
+genera le curve totali
+ 
+extracting data from OP 6181 
+creating total curves for observation 024
+ 
+ op_6181/npd024.p1grb001.log                                                    
+                      
+ op_6181/npd024.p1grb002.log                                                    
+                      
+ op_6181/npd024.p1grb003.log                                                    
+                      
+ op_6181/npd024.p2grb001.log                                                    
+                      
+ op_6181/npd024.p2grb002.log                                                    
+                      
+ op_6181/npd024.p2grb003.log                                                    
+                      
+ op_6181/npd024.p3grb001.log                                                    
+                      
+ op_6181/npd024.p3grb002.log                                                    
+                      
+ op_6181/npd024.p3grb003.log                                                    
+                      
+ op_6181/npd024.p4grb001.log                                                    
+                      
+ op_6181/npd024.p4grb002.log                                                    
+                      
+ op_6181/npd024.p4grb003.log                                                    
+                      
+programma SDI lanciato
+IDL Version 5.2 (OSF alpha). Research Systems, Inc.
+Trial version expires on 15-jul-2001.
+Licensed for use by: CNR - Campus IDL/ENVI/VIP
+
+For basic information, enter "IDLInfo" at the IDL> prompt.
+
+% Compiled module: $MAIN$.
+
+selezionato OP 6181 osservazione 024
+
+Nell' OP ed osservazione specificati sono presenti i seguenti trigger:
+
+       0  op_6181/npd024.p1_1.tot.out
+       1  op_6181/npd024.p2_1.tot.out
+       2  op_6181/npd024.p3_1.tot.out
+       3  op_6181/npd024.p4_1.tot.out
+
+selezione delle curve da analizzare
+
+files presenti :            4
+trigger completi presenti :        1
+carico il trigger        1
+
+prossimo trigger da caricare : n.        1
+ 
+Caricamento in corso. Attendere, prego ...
+ 
+ 
+ 
+op_6181/npd024.p1_1.tot.out
+op_6181/npd024.p2_1.tot.out
+op_6181/npd024.p3_1.tot.out
+op_6181/npd024.p4_1.tot.out
+
+% Compiled module: C_CORRELATE.
+
+       4       3      1.50000
+
+Segnale sui seguenti schermi:
+ 
+    Schermo   inizio       fine         durata       massimo      tmassimo
+ 
+       3      7.93750      8.00000    0.0625000     349      7.99219  *
+       4      7.93750      7.99219    0.0546899     152      7.99219  *
+ 
+--------------------------------------------------------------------
+
+Durata:  0.0156202 + 0.00230000 - 0.00781012
+
+% Starting at:  $MAIN$                 
+acquisisco risultati generati da SDI
+
+
+GRBMhandler :
+
+salva le durate
+
+      -- --      -- --    0.0625000    0.0546899
+
+sugli schermi
+
+        0          0          1            1
+
+come trigger   1
+dell'osservazione 024
+burst_point =    5
+
+
+salvo i punteggi per OP 6181 osservazione 024
+trigger n.    1
+
+OPlist : devo salvare i punteggi
+      1.50000   -0.0100000   -0.0100000   -0.0100000   -0.0100000   -0.0100000
+sugli schermi
+       0       0       1       1
+
+******************************
+points =       1.50000   -0.0100000   -0.0100000   -0.0100000   -0.0100000
+   -0.0100000
+
+p[0] ----> p4 - p3
+p[1] ----> p4 - p2
+p[2] ----> p4 - p1
+p[3] ----> p3 - p2
+p[4] ----> p3 - p1
+p[5] ----> p2 - p1
+
+coppia  1 	punteggio =       1.50000
+
+
+prossimo burst su cui salvare =        6
+
+cancello le curve totali
+
+comprime dati nell'OP 6181 osservazione 024
+OP corrente = 6181
+
+osservazione corrente = 027
+analizzo i dati 
+
+
+
+...	...	...	
+...	...	...
+
+...	...	...
+...	...	...
+
+
+
+
+analizzo i dati 
+
+OP corrente = 6181
+
+osservazione corrente = 018
+
+decomprime dati nell'OP 6181 osservazione 018
+
+genera le curve totali
+
+ extracting data from OP 6181 
+ creating total curves for observation 018
+
+ op_6181/npd018.p1grb001.log                                                    
+                      
+ op_6181/npd018.p1grb002.log                                                    
+                      
+ op_6181/npd018.p1grb003.log                                                    
+                      
+ op_6181/npd018.p2grb001.log                                                    
+                      
+ op_6181/npd018.p2grb002.log                                                    
+                      
+ op_6181/npd018.p2grb003.log                                                    
+                      
+ op_6181/npd018.p3grb001.log                                                    
+                      
+ op_6181/npd018.p3grb002.log                                                    
+                      
+ op_6181/npd018.p3grb003.log                                                    
+                      
+ op_6181/npd018.p4grb001.log                                                    
+                      
+ op_6181/npd018.p4grb002.log                                                    
+                      
+ op_6181/npd018.p4grb003.log                                                    
+                      
+programma SDI lanciato
+
+IDL Version 5.2 (OSF alpha). Research Systems, Inc.
+Trial version expires on 15-jul-2001.
+Licensed for use by: CNR - Campus IDL/ENVI/VIP
+
+For basic information, enter "IDLInfo" at the IDL> prompt.
+
+% Compiled module: $MAIN$.
+
+selezione OP 
+Nell' OP ed osservazione specificati sono presenti i seguenti trigger:
+       0  op_6181/npd018.p1_1.tot.out
+       1  op_6181/npd018.p1_2.tot.out
+       2  op_6181/npd018.p2_1.tot.out
+       3  op_6181/npd018.p2_2.tot.out
+       4  op_6181/npd018.p3_1.tot.out
+       5  op_6181/npd018.p3_2.tot.out
+       6  op_6181/npd018.p4_1.tot.out
+       7  op_6181/npd018.p4_2.tot.out
+
+selezione delle curve da analizzare
+
+files presenti :            8
+trigger completi presenti :        2
+carico il trigger        1
+
+
+prossimo trigger da caricare : n.        2
+ 
+Caricamento in corso. Attendere, prego ...
+ 
+ 
+ 
+op_6181/npd018.p1_1.tot.out
+op_6181/npd018.p2_1.tot.out
+op_6181/npd018.p3_1.tot.out
+op_6181/npd018.p4_1.tot.out
+
+% Compiled module: C_CORRELATE.
+
+Segnale sui seguenti schermi:
+ 
+
+   Schermo    inizio       fine        durata     massimo    tmassimo
+--------------------------------------------------------------------
+       1      7.90625      8.69532     0.789070      36      7.92188  *
+       2      7.84375      8.64844     0.804689      57      7.89844  *
+       3      7.84375      8.55469     0.710939      55      7.99219
+       4      7.87500      8.79688     0.921880      26      7.92188  *
+ 
+--------------------------------------------------------------------
+
+
+% Starting at:  $MAIN$    
+             
+acquisisco risultati generati da SDI
+
+GRBMhandler :
+salvo le durate per OP 6181,  osservazione 018,  trigger n.    1
+
+
+     0.789070     0.804689     0.710939     0.921880
+
+sugli schermi
+
+       1       	     1            1             1
+
+
+burst puntato  burst_point =    4
+ 
+risulta salvato come trigger   1 dell'osservazione 018
+
+
+
+
+
+GRBMhandler :
+salvo i punteggi per OP 6181 osservazione 018
+trigger n.    1
+
+OPlist : devo salvare i punteggi
+
+      6.00000      0.00000      2.00000      5.00000      5.00000      1.00000
+
+per le coppie fra gli schermi
+
+       p1      p2      p3     p4
+
+       1       1       1       1
+
+
+risulta salvato come trigger   1
+dell'osservazione 018
+
+p[0] ----> p4 - p3	punteggio =       6.00000
+p[1] ----> p4 - p2	punteggio =       0.00000
+p[2] ----> p4 - p1	punteggio =       2.00000
+p[3] ----> p3 - p2	punteggio =       5.00000
+p[4] ----> p3 - p1	punteggio =       5.00000
+p[5] ----> p2 - p1	punteggio =       1.00000
+
+
+prossimo burst su cui salvare : burst_point =        5
+
+GRBMhandler
+
+osservazione contenente    2 trigger
+
+programma SDI lanciato
+IDL Version 5.2 (OSF alpha). Research Systems, Inc.
+Trial version expires on 15-jul-2001.
+Licensed for use by: CNR - Campus IDL/ENVI/VIP
+
+For basic information, enter "IDLInfo" at the IDL> prompt.
+
+% Compiled module: $MAIN$.
+
+selezione OP 
+
+Nell' OP ed osservazione specificati sono presenti i seguenti trigger:
+       0  op_6181/npd018.p1_1.tot.out
+       1  op_6181/npd018.p1_2.tot.out
+       2  op_6181/npd018.p2_1.tot.out
+       3  op_6181/npd018.p2_2.tot.out
+       4  op_6181/npd018.p3_1.tot.out
+       5  op_6181/npd018.p3_2.tot.out
+       6  op_6181/npd018.p4_1.tot.out
+       7  op_6181/npd018.p4_2.tot.out
+
+selezione delle curve da analizzare
+
+files presenti :            8
+trigger completi presenti :        2
+
+carico il trigger        2
+
+prossimo trigger da caricare : n.        1
+ 
+Caricamento in corso. Attendere, prego ...
+ 
+ 
+ 
+op_6181/npd018.p1_2.tot.out
+op_6181/npd018.p2_2.tot.out
+op_6181/npd018.p3_2.tot.out
+op_6181/npd018.p4_2.tot.out
+
+...	...	...	...
+...	...	...	...
+
+ecc ... ecc ...
+
+
+Al termine della funzione di analisi sui 3 OP del campione, il programma torna sulla schermata di menu'
+
+
+selezionare la funzione
+e premere invio
+
+0 = termina l'elaborazione
+
+1 = aggiorna l'archivio
+
+2 = mostra i dati
+
+3 = mostra la copertura
+
+4 = mostra la lista
+
+5 = crea le curve
+
+6 = analizza le curve
+
+7 = comprimi i dati
+
+8 = analizza archivio
+
+
+
+Se a questo punto si chiede di mostrare i dati possiamo leggere le informazioni calcolate per i segnali
+ed inserite negli opportuni campi della struttura.
+
+OP scelto ?
+: 6181
+
+vuoi le informazioni relative ai burst ? (y/n)
+: y
+
+n. burst contenuti =   12
+n. osservazioni contenute =    9 :  006 009 015 018 024 027 028 033 036
+         
+burst 1	  osservazione = 006 indice =    1
+burst 2	  osservazione = 006 indice =    2
+burst 3	  osservazione = 009 indice =    1
+burst 4	  osservazione = 015 indice =    1
+burst 5	  osservazione = 018 indice =    1
+burst 6	  osservazione = 018 indice =    2
+burst 7	  osservazione = 024 indice =    1
+burst 8	  osservazione = 027 indice =    1
+burst 9	  osservazione = 028 indice =    1
+burst 10  osservazione = 033 indice =    1
+burst 11  osservazione = 036 indice =    1
+burst 12  osservazione = 036 indice =    2
+
+selezionare l'opzione 
+
+s = singola osservazione
+t = tutti i burst
+n = nessuna operazione
+: 
+
+A questo punto si sceglie di leggere i dati per l'osservazione 018
+
+
+:s
+
+selezionare l'osservazione (formato 000)
+: 018
+
+dati per l'osservazione 018
+
+dati burst
+OP di provenienza : 6181
+osservazione n. 018
+indice nell'osservazione =    1
+tempo di trigger = 08:39:01:53400
+spettro di energia =       1.99990
+
+ascensione retta = hh mm ss.s
+declinazione = dd mm ss.s
+errore = 99 %
+
+segnale rilevato su    4 schermi
+
+durata sullo schermo        1 =      0.789070 sec
+durata sullo schermo        2 =      0.804689 sec
+durata sullo schermo        3 =      0.710939 sec
+durata sullo schermo        4 =      0.921880 sec
+
+durata media =                       0.806645 sec
+
+
+punteggio sullo schermo        1 =       2.66667
+punteggio sullo schermo        2 =       2.00000
+punteggio sullo schermo        3 =       5.33333
+punteggio sullo schermo        4 =       2.66667
+
+
+
+punteggio globale =                      1.26667
+
+
+
+dati burst
+OP di provenienza : 6181
+osservazione n. 018
+indice nell'osservazione =    2
+tempo di trigger = 09:24:59:31325
+spettro di energia =       1.99990
+
+ascensione retta = hh mm ss.s
+declinazione = dd mm ss.s
+errore = 99 %
+
+segnale rivelato su    2 schermi
+
+durata sullo schermo        3 =     0.0546899 sec
+durata sullo schermo        4 =      0.242190 sec
+
+durata media =                       0.148440 sec
+
+punteggio sullo schermo        3 =       6.98000
+punteggio sullo schermo        4 =       6.98000
+
+punteggio globale =                      6.98000
+
+
+
+
+Abbiamo cosi' visualizzato il contenuto dei due oggetti burst relativi 
+all'osservazione 018 dell'OP 6181 notiamo che i campi relativi alle informazioni 
+sulla direzione di provenienza della sorgente e alle informazioni spettrali non
+sono inserite.
+Vediamo che ci sono 2 trigger, il primo viene rivelato su tutti e 4 gli schermi e il secondo
+su gli schermi 3 e 4. 
+Per il primo trigger notiamo durate molto simili (intorno agli 0.8 secondi) inoltre i punteggi
+per il filtro da spike sono molto bassi, cio' significa che i segnali devono avere anche forma
+simile ed essere piuttosto contemporanei: tutte le caratteristiche che deve avere un burst.
+Inoltre i punteggi sui 4 schermi sono piuttosto simili.
+
+Questo segnale e' un buon candidato per essere un burst, e infatti lo e' e si tratta dell'evento
+relativo alla sorgente SGR 1900 + 14 del 10 gennaio 1999.
+
+L'altro trigger dell'osservazione e' invece rivelato su 2 soli schermi, ed il segnale non ha durata
+confrontabile nei 2 casi  
+
+selezionare la funzione
+e premere invio
+
+0 = termina l'elaborazione
+
+1 = aggiorna l'archivio
+
+2 = mostra i dati
+
+3 = mostra la copertura
+
+4 = mostra la lista
+
+5 = crea le curve
+
+6 = analizza le curve
+
+7 = comprimi i dati
+
+8 = analizza archivio
+
+: 
+   

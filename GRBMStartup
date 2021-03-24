@@ -1,0 +1,19 @@
+	;*********************************************
+	;**** comandi per lanciare l'applicazione ****
+	;*********************************************
+
+; **** estrae i parametri per il fit
+
+.compile tempo.pro
+.compile shell.pro
+.compile Burst__Define.pro
+.compile Duration__Define.pro
+.compile direction__Define.pro
+.compile punteggio__Define.pro
+.compile OP__Define.pro
+.compile OPlist__Define.pro
+.compile GRBMhandler__Define.pro
+.compile Ginterface__Define.pro
+.run GRBMhandler.pro
+.continue
+exit

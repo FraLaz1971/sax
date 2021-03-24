@@ -1,0 +1,549 @@
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+oggetto OP inizializzato
+loading data OP_3465
+unzipping file npd001.p1grb001
+calGRBMtime npd001.p1grb001 > ./op_3465/iniTimes001.txt
+unzipping file npd004.p1grb001
+calGRBMtime npd004.p1grb001 > ./op_3465/iniTimes004.txt
+unzipping file npd007.p1grb001
+calGRBMtime npd007.p1grb001 > ./op_3465/iniTimes007.txt
+unzipping file npd013.p1grb001
+calGRBMtime npd013.p1grb001 > ./op_3465/iniTimes013.txt
+unzipping file npd019.p1grb001
+calGRBMtime npd019.p1grb001 > ./op_3465/iniTimes019.txt
+unzipping file npd037.p1grb001
+calGRBMtime npd037.p1grb001 > ./op_3465/iniTimes037.txt
+unzipping file npd040.p1grb001
+calGRBMtime npd040.p1grb001 > ./op_3465/iniTimes040.txt
+unzipping file npd043.p1grb001
+calGRBMtime npd043.p1grb001 > ./op_3465/iniTimes043.txt
+unzipping file npd046.p1grb001
+calGRBMtime npd046.p1grb001 > ./op_3465/iniTimes046.txt
+stringa salvata : 06:23:21:84961
+freeburst  e' :    0
+opindex = 3465
+stringa salvata : 49113953002:22:56:00000
+freeburst  e' :    1
+opindex = 3465
+stringa salvata : 08:29:09:78125
+freeburst  e' :    2
+opindex = 3465
+stringa salvata : 10:28:53:57813
+freeburst  e' :    3
+opindex = 3465
+stringa salvata : 12:14:10:10156
+freeburst  e' :    4
+opindex = 3465
+stringa salvata : 08:01:48:62109
+freeburst  e' :    5
+opindex = 3465
+stringa salvata : 08:53:44:13672
+freeburst  e' :    6
+opindex = 3465
+stringa salvata : 49113953002:22:56:00000
+freeburst  e' :    7
+opindex = 3465
+stringa salvata : 10:52:20:23047
+freeburst  e' :    8
+opindex = 3465
+loading data OP_10855
+unzipping file npd001.p1grb001
+calGRBMtime npd001.p1grb001 > ./op_10855/iniTimes001.txt
+stringa salvata : 09:33:33:71875
+freeburst  e' :    0
+opindex = 10855
+loading data OP_10861
+unzipping file npd001.p1grb001
+calGRBMtime npd001.p1grb001 > ./op_10861/iniTimes001.txt
+unzipping file npd004.p1grb001
+calGRBMtime npd004.p1grb001 > ./op_10861/iniTimes004.txt
+stringa salvata : 06:26:03:98242
+freeburst  e' :    0
+opindex = 10861
+stringa salvata : 31101887301:24:16:00000
+freeburst  e' :    1
+opindex = 10861
+loading data OP_11082
+unzipping file npd001.p1grb001
+calGRBMtime npd001.p1grb001 > ./op_11082/iniTimes001.txt
+unzipping file npd003.p1grb001
+calGRBMtime npd003.p1grb001 > ./op_11082/iniTimes003.txt
+unzipping file npd015.p1grb001
+calGRBMtime npd015.p1grb001 > ./op_11082/iniTimes015.txt
+unzipping file npd018.p1grb001
+calGRBMtime npd018.p1grb001 > ./op_11082/iniTimes018.txt
+unzipping file npd030.p1grb001
+calGRBMtime npd030.p1grb001 > ./op_11082/iniTimes030.txt
+unzipping file npd033.p1grb001
+calGRBMtime npd033.p1grb001 > ./op_11082/iniTimes033.txt
+unzipping file npd036.p1grb001
+calGRBMtime npd036.p1grb001 > ./op_11082/iniTimes036.txt
+unzipping file npd039.p1grb001
+calGRBMtime npd039.p1grb001 > ./op_11082/iniTimes039.txt
+unzipping file npd045.p1grb001
+calGRBMtime npd045.p1grb001 > ./op_11082/iniTimes045.txt
+stringa salvata : 11:55:56:82422
+freeburst  e' :    0
+opindex = 11082
+stringa salvata : 12:25:13:46094
+freeburst  e' :    1
+opindex = 11082
+stringa salvata : 018766883134:34:40:00000
+freeburst  e' :    2
+opindex = 11082
+stringa salvata : 10:09:22:93750
+freeburst  e' :    3
+opindex = 11082
+stringa salvata : 11:47:55:63672
+freeburst  e' :    4
+opindex = 11082
+stringa salvata : 12:00:29:66406
+freeburst  e' :    5
+opindex = 11082
+stringa salvata : 018766883134:34:40:00000
+freeburst  e' :    6
+opindex = 11082
+stringa salvata : 08:29:11:62109
+freeburst  e' :    7
+opindex = 11082
+stringa salvata : 09:13:53:83984
+freeburst  e' :    8
+opindex = 11082
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     1
+sto trasferendo la durh =        1
+per l'OP     1
+numero =     1
+vnumero =     1
+voglio sapere l'indice dell'OP     1
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     1non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     2
+sto trasferendo la durh =        0
+per l'OP     2
+numero =     2
+vnumero =     2
+voglio sapere l'indice dell'OP     2
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     2non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     3
+sto trasferendo la durh =        0
+per l'OP     3
+numero =     3
+vnumero =     3
+voglio sapere l'indice dell'OP     3
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     3non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     4
+sto trasferendo la durh =        7
+per l'OP     4
+numero =     4
+vnumero =     4
+voglio sapere l'indice dell'OP     4
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     4non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     5
+sto trasferendo la durh =        0
+per l'OP     5
+numero =     5
+vnumero =     5
+voglio sapere l'indice dell'OP     5
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     5non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto     6
+sto trasferendo la durh =        0
+per l'OP     6
+numero =     6
+vnumero =     6
+voglio sapere l'indice dell'OP     6
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP     6non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3459
+sto trasferendo la durh =        1
+per l'OP  3459
+numero =  3459
+vnumero =  3459
+voglio sapere l'indice dell'OP  3459
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3459non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3460
+sto trasferendo la durh =        0
+per l'OP  3460
+numero =  3460
+vnumero =  3460
+voglio sapere l'indice dell'OP  3460
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3460non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3461
+sto trasferendo la durh =        0
+per l'OP  3461
+numero =  3461
+vnumero =  3461
+voglio sapere l'indice dell'OP  3461
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3461non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3462
+sto trasferendo la durh =        0
+per l'OP  3462
+numero =  3462
+vnumero =  3462
+voglio sapere l'indice dell'OP  3462
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3462non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3463
+sto trasferendo la durh =        0
+per l'OP  3463
+numero =  3463
+vnumero =  3463
+voglio sapere l'indice dell'OP  3463
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3463non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3464
+sto trasferendo la durh =        0
+per l'OP  3464
+numero =  3464
+vnumero =  3464
+voglio sapere l'indice dell'OP  3464
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3464non presente in archivio
+leggo la stringa 3465
+op in archivio locale 3465
+op in archivio remoto  3465
+OP presente in archivio locale
+sto trasferendo la durh =       27
+per l'OP  3465
+numero =  3465
+vnumero =  3465
+voglio sapere l'indice dell'OP  3465
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3465non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3466
+sto trasferendo la durh =        3
+per l'OP  3466
+numero =  3466
+vnumero =  3466
+voglio sapere l'indice dell'OP  3466
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3466non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3467
+sto trasferendo la durh =        0
+per l'OP  3467
+numero =  3467
+vnumero =  3467
+voglio sapere l'indice dell'OP  3467
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3467non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3468
+sto trasferendo la durh =        0
+per l'OP  3468
+numero =  3468
+vnumero =  3468
+voglio sapere l'indice dell'OP  3468
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3468non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3469
+sto trasferendo la durh =        0
+per l'OP  3469
+numero =  3469
+vnumero =  3469
+voglio sapere l'indice dell'OP  3469
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3469non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3470
+sto trasferendo la durh =        0
+per l'OP  3470
+numero =  3470
+vnumero =  3470
+voglio sapere l'indice dell'OP  3470
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3470non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto  3471
+sto trasferendo la durh =        0
+per l'OP  3471
+numero =  3471
+vnumero =  3471
+voglio sapere l'indice dell'OP  3471
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP  3471non presente in archivio
+leggo la stringa 10855
+op in archivio locale 10855
+op in archivio remoto 10855
+OP presente in archivio locale
+sto trasferendo la durh =        0
+per l'OP 10855
+numero = 10855
+vnumero = 10855
+voglio sapere l'indice dell'OP 10855
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OP presente !!
+l'indice di 10855 e'        1
+leggo la stringa 10861
+op in archivio locale 10861
+op in archivio remoto 10859
+sto trasferendo la durh =        3
+per l'OP 10859
+numero = 10859
+vnumero = 10859
+voglio sapere l'indice dell'OP 10859
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP 10859non presente in archivio
+leggo la stringa 10861
+op in archivio locale 10861
+op in archivio remoto 10861
+OP presente in archivio locale
+sto trasferendo la durh =        3
+per l'OP 10861
+numero = 10861
+vnumero = 10861
+voglio sapere l'indice dell'OP 10861
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OP presente !!
+l'indice di 10861 e'        2
+leggo la stringa 11082
+op in archivio locale 11082
+op in archivio remoto 11884
+sto trasferendo la durh =        2
+per l'OP 11884
+numero = 11884
+vnumero = 11884
+voglio sapere l'indice dell'OP 11884
+OPID memorizzato = 3465
+a =    0
+OPID memorizzato = 10855
+a =        1
+OPID memorizzato = 10861
+a =        2
+OPID memorizzato = 11082
+a =        3
+OP 11884non presente in archivio
+
+*****                                *****
+ tempo totale copertura osservazione grbm ore/min/sec          31          43
+           0
+arrivederci e grazie
+oggetto GRBMhandler inizializzato
+procedura main
+***********************************
+**** programma per la gestione ****
+**** 	  archivio GRBM	       ****
+***********************************
+
+selezionare la funzione
+e premere invio
+
+0 = termina l'elaborazione
+
+1 = aggiorna l'archivio
+
+2 = analizza i dati
+
+3 = mostra la copertura
+
+4 = mostra la lista
+elaborazione terminata
+arrivederci
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distruggo oggetto OP
+distrutto oggetto OPlist 
+distruggo oggetto Ginterface
+GRBMhandler distrutto
+<NullObject>

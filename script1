@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# ************************************************************
+# **** procedura per aggiornare gli OP in archivio locale ****
+# ************************************************************
+
+# **** aggiorna il file contenente gli OP presenti in archivio locale ****
+
+echo 'attendere : controllo archivio locale'
+
+ls > listato.txt
+
+# **** aggiorna il file contenente gli OP presenti in memoria buffer del VAX ****
+touch vaxdir2.txt
+ftp -n -v saxnet.sdc.asi.it << __END__
+user grbfot ls3_user
+ascii
+prompt
+bell
+pwd
+dir [GRB] vaxdir2.txt
+bye
+__END__
+
+# **** individua gli OP da richiedere tramite il programma idl OP_control.pro **** 
+
+idl start
+
+# **** richiedi gli OP mancanti **** 
+ 
+while read  x 
+    do
+	ftp_fot $x
+done < OPtoget.txt	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
